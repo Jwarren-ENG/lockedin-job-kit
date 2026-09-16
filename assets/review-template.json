@@ -1,0 +1,8 @@
+{
+  "job_id":"", "permission_revision":"", "resume_sha256":"",
+  "official_posting_verified":false, "matches_search":false, "eligibility_verified":false,
+  "facts_verified":false, "resume_one_page_verified":false, "form_reviewed":false,
+  "host_allows_submission":false, "user_submit_approval":null,
+  "unknown_answers":[], "consents_needed":[], "answer_evidence":{},
+  "fit_evidence":{}, "disclosure_evidence":[]
+}

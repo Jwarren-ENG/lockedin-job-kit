@@ -1,0 +1,20 @@
+# Validation for v0.1.0
+
+## v0.2.0 additions
+
+The Python suite now includes optional Obsidian export checks: preserve personal note sections, keep rejected applications in historical submission counts, reject ambiguous interview timestamps, update rescheduled events without duplicates, and remove cancelled interviews from upcoming views. Run the suite and release audit on every change; All tests use fictional data only. GitHub Actions is not configured; run these checks locally.
+
+The original v0.1.0 checks below describe the initial development environment, not universal host certification. Phone push delivery, personal sync accounts and another person's end-to-end application flow still require their own tests.
+
+Executed locally using fictional applicants and temporary workspaces:
+
+- 20 Python workflow tests: initialization and no-overwrite, permission defaults and scoped updates, consent and unknown-field blocking, pause/revocation, resume hash changes, stale review rejection, duplicate roles/URLs, reservation and daily limits, evidence requirement, email event deduplication, status history, CSV formula escaping and exclusion of profile fields.
+- Browser setup smoke test in headless Chrome: unchecked defaults, required storage consent, separate demographic storage consent, private JSON download, form reset, zero HTTP requests and zero JavaScript errors. Full-page layout inspected.
+- Spreadsheet helper smoke test using the available artifact runtime: initial creation, append, status refresh, preserved user Notes and unrelated worksheet, formula-looking text not executed. Rendered output inspected.
+- Codex plugin manifest validator, Claude plugin validator and all five skill frontmatter validators passed.
+
+Run Python tests with `python3 -m unittest discover -s tests -v`. JavaScript tests require the host's Playwright/artifact runtime; use `BROWSER_CHANNEL=chrome node tests/test-setup.mjs` where Chrome is installed and `node tests/test-workbook.mjs`. These are optional development dependencies, not hidden installs.
+
+Not verified end-to-end: installation and execution in a separate person's Codex/Cowork account; live employer submissions; their password manager; native scheduling across every host; Google Sheets connector; all ATS variations. No live application, account or scheduler was created by these tests. PDF fixture in gate tests checks hashing only, not PDF rendering; real resumes must be compiled and visually verified during use.
+
+The permission gate is a local workflow check, not a security sandbox for arbitrary model/tool actions. The host assistant must enforce its skill instructions and platform controls. A checked field or synthetic test does not prove an employer received an application.

@@ -1,0 +1,11 @@
+import {build} from 'esbuild';
+import fs from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+process.chdir(fileURLToPath(new URL('.',import.meta.url)));
+execFileSync(process.execPath,['node_modules/tailwindcss/lib/cli.js','-i','src/style.css','-o','style.generated.css','--minify']);
+const built=await build({absWorkingDir:process.cwd(),entryPoints:['src/main.tsx'],bundle:true,minify:true,write:false,format:'iife',jsx:'automatic',define:{'process.env.NODE_ENV':'"production"'},legalComments:'inline'});
+const css=await fs.readFile('style.generated.css','utf8');
+const js=built.outputFiles[0].text.replace(/<\/script/gi,'<\\/script');
+await fs.writeFile('../assets/setup.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; form-action 'none'"><title>Job Search Kit · Setup</title><style>${css}</style></head><body><div id="root"></div><script>${js}</script></body></html>`);
+await fs.rm('style.generated.css');

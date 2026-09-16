@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "confirmed_at": null,
+  "identity": {
+    "name": "",
+    "preferred_name": "",
+    "application_email": "",
+    "phone": "",
+    "current_address": "",
+    "permanent_address": "",
+    "linkedin": "",
+    "github": "",
+    "portfolio": ""
+  },
+  "eligibility": {
+    "work_authorization": "",
+    "sponsorship": "",
+    "citizenship_answer": "",
+    "clearance": "",
+    "clearance_eligibility": "",
+    "graduation": "",
+    "earliest_start": "",
+    "internship_hours": "",
+    "travel": "",
+    "relocation": "",
+    "languages": []
+  },
+  "search": {
+    "roles": [],
+    "locations": [],
+    "work_modes": [],
+    "employment_types": [],
+    "seniority": [],
+    "minimum_base": null,
+    "currency": "USD",
+    "pay_period": "year",
+    "excluded_companies": [],
+    "sources": [
+      "https://apmlist.com/",
+      "https://github.com/jobright-ai/2026-Product-Management-New-Grad"
+    ],
+    "timezone": "",
+    "daily_time": "08:00"
+  },
+  "education": [],
+  "experience": [],
+  "projects": [],
+  "skills": [],
+  "confirmed_answers": {},
+  "resume": {
+    "authoritative_source": "resumes/base.tex",
+    "page_limit": 1,
+    "confirmed": false
+  }
+}

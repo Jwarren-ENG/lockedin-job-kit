@@ -1,0 +1,22 @@
+{
+  "name": "job-search-kit",
+  "version": "0.2.0",
+  "description": "Guided job-search onboarding, scoped permissions, LaTeX resumes and application tracking.",
+  "author": {
+    "name": "Job Search Kit"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Job Search Kit",
+    "shortDescription": "Find, apply and track with your own permissions.",
+    "longDescription": "Set up a private profile and LaTeX resume, choose application and disclosure permissions, track opportunities and employer responses, and configure daily runs with supported host tools.",
+    "developerName": "Job Search Kit",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Set up my job search and permissions.",
+      "Find new roles matching my profile.",
+      "Check my application responses and tracker."
+    ]
+  }
+}
