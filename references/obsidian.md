@@ -1,5 +1,7 @@
 # Optional Obsidian workspace
 
+[Download Obsidian](https://obsidian.md/download) for your computer or phone. [Obsidian Sync](https://obsidian.md/sync) is an optional paid service; a local vault does not require it. See the [beginner setup steps](../START_HERE.md#open-your-obsidian-dashboard).
+
 Ask the assistant: “Create my Obsidian job-search vault.” It runs:
 
 ```sh

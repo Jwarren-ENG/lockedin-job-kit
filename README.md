@@ -6,6 +6,8 @@ A shareable assistant plugin for personalized job searches, truthful LaTeX resum
 
 Download the ZIP from **Releases**, unzip it, and follow [START_HERE.md](START_HERE.md). The included setup form uses React and shadcn/ui and runs locally without a build or server.
 
+Need the apps first? [Download Obsidian](https://obsidian.md/download), [ChatGPT](https://chatgpt.com/download/), or [Claude](https://claude.com/download). The [setup guide](START_HERE.md#get-the-apps) explains which tools are required and which are optional, including Python, Obsidian Sync and the Kanban plugin.
+
 ## Start
 
 Install the plugin in a compatible host, then say:
@@ -50,7 +52,7 @@ To share, send only the supplied clean package. The release script packages an e
 
 ## Validation and scope
 
-See TESTING.md for actually executed tests. The first release provides executable local tracking and agent workflows; a successful local test is not proof that every employer portal or every host integration works. Test a draft on your own connected host before enabling unattended submissions. Version 0.2.0.
+See TESTING.md for actually executed tests. The first release provides executable local tracking and agent workflows; a successful local test is not proof that every employer portal or every host integration works. Test a draft on your own connected host before enabling unattended submissions. Version 0.2.1.
 
 ## Development and sharing
 
