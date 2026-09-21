@@ -25,7 +25,7 @@ Claude Code also supports `/job-search-kit:start`. For local testing use `claude
 - Automatically refreshed CSV/JSON tracker; an Excel workbook helper when the host has its supported spreadsheet runtime. Google Sheets can be connected through the host.
 - Optional Obsidian Home, application board, month calendar and interview calendar export.
 - APM List and Jobright new-grad PM discovery sources, filtered to each user.
-- Five skills: start, run, apply, status and interview-prep.
+- Six skills: start, run, apply, job-application-autofill, status and interview-prep.
 - Native-host daily scheduling instructions and mailbox checkpoint/deduplication workflow.
 - Separate permissions for automatic submissions, account creation, email reads, recruitment privacy, talent pools, recruiting partners, AI notes, and demographic storage/disclosure.
 
@@ -57,3 +57,7 @@ See TESTING.md for actually executed tests. The first release provides executabl
 ## Development and sharing
 
 Python 3.10+ is enough for core tracking and Obsidian exports. Run `python3 -m unittest discover -s tests -v`, then `python3 scripts/audit_release.py` and `python3 scripts/package.py dist`. Release archives use an explicit file allowlist. New source files must be added to `release-files.json`. See [privacy boundaries](PRIVACY.md) and the MIT [license](LICENSE). The shadcn attribution remains in `ui/SHADCN-LICENSE.md`.
+
+## v0.3.0
+
+Includes the section-level autofill planner and fictional-data regression tests. Routine fields resolve from confirmed private facts; novel answers remain grounded drafts. Improved guidance covers internship labels, AI-assisted skill depth, confidential projects, stale postings, mailbox coverage and quiet scheduled runs. The planner does not operate or submit browser forms by itself.

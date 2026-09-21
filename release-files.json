@@ -53,6 +53,13 @@
     "AGENTS.md",
     "LICENSE",
     "scripts/audit_release.py",
-    "PRIVACY.md"
+    "PRIVACY.md",
+    "references/autofill.md",
+    "skills/job-application-autofill/SKILL.md",
+    "skills/job-application-autofill/references/mappings.md",
+    "skills/job-application-autofill/references/planner.md",
+    "skills/job-application-autofill/references/ats.md",
+    "skills/job-application-autofill/scripts/test_autofill.py",
+    "skills/job-application-autofill/scripts/autofill.py"
   ]
 }

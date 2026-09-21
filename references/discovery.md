@@ -14,3 +14,11 @@ Job JSON for add-job:
 ```
 
 Reserve exact requisitions even if the URL changes. Company aliases and external ATS redirects require manual reconciliation. Do not submit simultaneous applications to the same role under alternate titles. Application databases are private and must never be included in the shareable plugin.
+
+## Freshness and rotation
+
+Use https://github.com/jobright-ai/2026-Product-Management-New-Grad as an optional PM lead source. Its repository name and aggregator date do not prove cohort eligibility or employer posting date. Exclude retail product demonstration from PM results.
+
+A JavaScript shell, empty text extraction, or dynamic empty-state template is an access limitation, not a closed role. Inspect the live page with supported browser tools before declaring it unavailable. A redirect to a generic board is not the original job description. Preserve prior status if current verification fails.
+
+Record actual coverage (filters, pages or excerpt boundaries), attempted_at, last_successful_check, and next employer rotation. Persist watch and excluded decisions by employer/requisition with reasons. Do not repeatedly investigate unchanged unavailable roles or alert on unchanged blockers. A low compensation range is a ranking factor, not an invented user salary floor. Prepare strong authorized matches before ending the run; use watch status only for a concrete unresolved fit question.

@@ -16,3 +16,5 @@ Read [permissions](../../references/permissions.md), [resume workflow](../../ref
 7. Record a verified portal receipt with status Submitted, preserving timestamp and source. If the response is ambiguous or interrupted, mark Submission uncertain, retain evidence and investigate before any retry. User-confirmed submission is acceptable evidence but label it as such. Update tracker through status/export; do not edit a historical submitted PDF.
 
 An employer assessment is separate from an application. Do not complete a live assessment on the candidate's behalf contrary to its rules. Offer preparation and permitted assistance instead.
+
+For efficient section-level filling, use [the bundled autofill skill](../job-application-autofill/SKILL.md). Its local planner proposes actions; host controls, permission checks and submission evidence still apply.

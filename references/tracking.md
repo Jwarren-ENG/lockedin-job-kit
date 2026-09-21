@@ -13,3 +13,11 @@ Append evidence-backed events. `status` uses event-key for mail deduplication; u
 After every run check database/export agreement, workbook updated rows and totals, visual legibility when applicable. On export failure, keep canonical application events and mark workbook refresh pending; do not retry an external submit. Keep logs of per-source and per-mailbox checkpoints, failure, completeness and deduplicated notifications.
 
 The provided workbook helper creates a Tracker table on first use and subsequently updates only plugin-owned columns on that sheet. The Notes column is user-owned after creation. It never removes missing rows or changes other tabs. Reconcile user edits before overwriting any other column; use manual mode if the workbook no longer matches its headers.
+
+## Coverage checkpoints and quiet runs
+
+Use separate schedules and checkpoints for job discovery and each mailbox. More frequent job searches do not authorize repeated email scans. Verify the connected account identity before reading. For large mailboxes, use bounded folder/date searches; partial or timed-out results cannot support a no-mail conclusion or advance that search checkpoint.
+
+A recent-message fallback can establish coverage only if its ordered date range spans the intended overlap. Record its actual range, pagination and limitations separately from failed searches. Read relevant messages fully, deduplicate RFC Message-ID across accounts, and distinguish LinkedIn notification previews from full recruiter conversations.
+
+Log routine coverage in one structured run record rather than repeatedly appending identical prose to status pages. Update status notes and workbook rows for material changes. Record unchanged workbook verification separately from edits. A local Obsidian import is not proof of cloud sync, fresh email access or live job discovery. Preserve standalone interviews, completed preparation tasks, and original invitation evidence; deduplicate reschedules and cancellations by event identity.

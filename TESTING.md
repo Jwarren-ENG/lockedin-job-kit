@@ -1,3 +1,9 @@
+## v0.3.0 validation
+
+Executed: 23 tracking/Obsidian tests and 28 autofill regression tests, release allowlist audit, package generation and diff whitespace checks. Autofill tests cover duplicate contact prevention, scoped aliases, stale sources, disclosure gates and evidence-grounded answers. Run `python3 -m unittest discover -s skills/job-application-autofill/scripts -p 'test_*.py' -v` in addition to the main suite.
+
+The external Codex manifest validator could not run in this environment because PyYAML is unavailable. Both JSON manifests parse and only their version changed. No UI or workbook implementation changed; earlier UI checks were not rerun. Live employer submission and cross-host installation remain unverified.
+
 # Validation for v0.1.0
 
 ## v0.2.0 additions
