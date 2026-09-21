@@ -60,6 +60,7 @@
     "skills/job-application-autofill/references/planner.md",
     "skills/job-application-autofill/references/ats.md",
     "skills/job-application-autofill/scripts/test_autofill.py",
-    "skills/job-application-autofill/scripts/autofill.py"
+    "skills/job-application-autofill/scripts/autofill.py",
+    "skills/obsidian/SKILL.md"
   ]
 }

@@ -25,3 +25,5 @@ Use the invitation's date, timezone and offset, including daylight saving time. 
 Sync is optional and user-configured. Choose one supported service, such as Obsidian Sync. Never configure two sync systems for the same vault. Verify on the user's second device before claiming phone sync. The plugin cannot promise phone push notifications; test the host's notification channel separately.
 
 Only selected application fields are exported. Profiles, demographic answers, addresses, resumes and email bodies are not copied to the vault by this helper. User-authored job fields and notes can still contain private information: treat the vault as private.
+
+For existing-vault organization, calendar troubleshooting, safe task preservation and sync verification, use the dedicated [Obsidian skill](../skills/obsidian/SKILL.md).

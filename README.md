@@ -25,7 +25,7 @@ Claude Code also supports `/job-search-kit:start`. For local testing use `claude
 - Automatically refreshed CSV/JSON tracker; an Excel workbook helper when the host has its supported spreadsheet runtime. Google Sheets can be connected through the host.
 - Optional Obsidian Home, application board, month calendar and interview calendar export.
 - APM List and Jobright new-grad PM discovery sources, filtered to each user.
-- Six skills: start, run, apply, job-application-autofill, status and interview-prep.
+- Seven skills: start, run, apply, job-application-autofill, status, interview-prep and obsidian.
 - Native-host daily scheduling instructions and mailbox checkpoint/deduplication workflow.
 - Separate permissions for automatic submissions, account creation, email reads, recruitment privacy, talent pools, recruiting partners, AI notes, and demographic storage/disclosure.
 
@@ -61,3 +61,7 @@ Python 3.10+ is enough for core tracking and Obsidian exports. Run `python3 -m u
 ## v0.3.0
 
 Includes the section-level autofill planner and fictional-data regression tests. Routine fields resolve from confirmed private facts; novel answers remain grounded drafts. Improved guidance covers internship labels, AI-assisted skill depth, confidential projects, stale postings, mailbox coverage and quiet scheduled runs. The planner does not operate or submit browser forms by itself.
+
+### Obsidian maintenance
+
+Ask “Organize my job-search vault,” “Fix duplicate interviews on my calendar,” or “Check whether my vault is syncing.” The Obsidian skill preserves existing notes, follows the vault’s source records, checks calendar counts and clearly reports which sync behavior was verified. The bundled board remains a generated view; an interactive task board needs separate configuration.

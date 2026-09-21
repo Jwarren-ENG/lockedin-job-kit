@@ -16,3 +16,5 @@ Read the private profile, permissions, capabilities, schedule and existing appli
 7. Notify only new strong actionable matches, verified submissions, substantive employer responses, deadlines or user-action blockers. Stay quiet if unchanged. Release the run lock. A failed export is a tracker failure, not an unsubmitted application; recover from the database without resubmitting.
 
 For scheduled use, execute one cycle and stop. The host scheduler owns recurrence; never create an unapproved OS daemon, cron job or recurring loop as a fallback.
+
+When Obsidian tracking is configured, use [the Obsidian skill](../obsidian/SKILL.md) to refresh the existing vault after source updates and verify Home/calendar consistency. Local refresh does not verify remote sync.

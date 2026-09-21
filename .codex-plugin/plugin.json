@@ -1,6 +1,6 @@
 {
   "name": "job-search-kit",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Guided job-search onboarding, scoped permissions, LaTeX resumes and application tracking.",
   "author": {
     "name": "Job Search Kit"

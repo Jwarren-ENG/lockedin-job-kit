@@ -14,3 +14,5 @@ Use stable RFC Message-ID or provider IDs for event deduplication. Match employe
 Use `jobkit.py status <id> <state> --evidence <evidence> --event-key <stable-id> --next-action <action>` and then refresh the workbook. A receipt arriving after an interview must not regress the application to Submitted. If events conflict, record the conflict and ask rather than silently overriding. Never infer rejection from silence or accept an offer, schedule a meeting, send replies or withdraw on status-monitor permission alone.
 
 Report next actions and actual evidence. Run interview-prep when requested. Pause/revoke requests take effect immediately: `jobkit.py pause` blocks future application reservations; also pause/delete the matching native schedule through host tools when authorized. Disabling a connector permission should end that use immediately.
+
+When Obsidian tracking is configured, use [the Obsidian skill](../obsidian/SKILL.md) to refresh the existing vault after source updates and verify Home/calendar consistency. Local refresh does not verify remote sync.
