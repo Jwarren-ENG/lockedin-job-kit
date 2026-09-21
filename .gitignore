@@ -20,7 +20,7 @@ applications/
 interviews/
 exports/
 resumes/
-obsidian/
+/obsidian/
 *.pdf
 *.xlsx
 *.csv
