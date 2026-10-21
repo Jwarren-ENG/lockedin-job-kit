@@ -9,6 +9,8 @@ Use the user's current authorization and the host's supported browser controls. 
 
 ## Load once, then fill by section
 
+For new graduate discovery before applying, follow [discovery guidance](../../references/discovery.md), including SimplifyJobs/New-Grad-Positions alongside APM List and Jobright. Verify official postings and deduplicate before treating aggregator entries as actionable roles.
+
 Default to a single-link workflow: deduplicate the role, prepare/reuse its current truthful resume, fill routine fields in batches, draft all permitted unique answers together, then perform one final review. Do not ask for known facts or routine reversible steps. Collect genuinely missing facts into one concise request after completing independent work. Keep host-required action-time confirmations at the actual boundary.
 
 Within the same run, reuse loaded profile and experience context while sources are unchanged. Reopen only files changed by the user or task. Do not reread entire history for routine fields. Reuse an existing role-specific PDF only when its role, source facts and current requirements still match; preserve historical submitted copies.

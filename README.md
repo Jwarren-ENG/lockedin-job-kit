@@ -24,7 +24,7 @@ Claude Code also supports `/job-search-kit:start`. For local testing use `claude
 - SQLite application history with stable IDs, duplicate detection, submission reservations, evidence and daily caps.
 - Automatically refreshed CSV/JSON tracker; an Excel workbook helper when the host has its supported spreadsheet runtime. Google Sheets can be connected through the host.
 - Optional Obsidian Home, application board, month calendar and interview calendar export.
-- APM List and Jobright new-grad PM discovery sources, filtered to each user.
+- APM List, Jobright and Simplify new graduate discovery sources, filtered to each user.
 - Seven skills: start, run, apply, job-application-autofill, status, interview-prep and obsidian.
 - Native-host daily scheduling instructions and mailbox checkpoint/deduplication workflow.
 - Separate permissions for automatic submissions, account creation, email reads, recruitment privacy, talent pools, recruiting partners, AI notes, and demographic storage/disclosure.

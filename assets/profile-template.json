@@ -37,7 +37,8 @@
     "excluded_companies": [],
     "sources": [
       "https://apmlist.com/",
-      "https://github.com/jobright-ai/2026-Product-Management-New-Grad"
+      "https://github.com/jobright-ai/2026-Product-Management-New-Grad",
+      "https://github.com/SimplifyJobs/New-Grad-Positions"
     ],
     "timezone": "",
     "daily_time": "08:00"
