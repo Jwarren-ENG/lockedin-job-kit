@@ -126,7 +126,10 @@ function compare(models, day, week) {
     const model = models[workflow];
     const used = applications * model.turns * (unit === 'tokens' ? model.tokens : 1);
     const ratio = used / limit * 100;
-    const label = ratio > 0 && ratio < 0.1 ? 'less than 0.1%' : percent.format(ratio) + '%';
+    let label = ratio > 0 && ratio < 0.1 ? 'less than 0.1%' : percent.format(ratio) + '%';
+    if (label === '100%' && used !== limit) {
+      label = used > limit ? 'just over 100%' : 'just under 100%';
+    }
     message = fmt.format(used) + ' of ' + fmt.format(limit) + ' ' + unit + ' · ' + label + ' of this allowance.';
   }
   asText('allow-result',message);

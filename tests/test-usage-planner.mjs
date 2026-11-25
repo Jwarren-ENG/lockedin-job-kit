@@ -43,6 +43,10 @@ try {
   await select('unit', 'tokens')
   await fill('limit', 100000)
   assert.match(await text('allow-result'), /30,000 of 100,000 tokens · 30%/)
+  for (const [limit, expected] of [[29999, 'just over 100%'], [30000, '100%'], [30001, 'just under 100%']]) {
+    await fill('limit', limit)
+    assert.equal(await text('allow-result'), '30,000 of ' + limit.toLocaleString('en-US') + ' tokens · ' + expected + ' of this allowance.')
+  }
   await select('period', 'custom')
   await fill('limit', 50000)
   assert.match(await text('allow-result'), /applications planned/)
