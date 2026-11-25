@@ -47,7 +47,7 @@ def package(destination):
 
     # Include the reading material offline. Only Advanced needs the executable tools.
     guides = ['BEGINNER.md', 'ADVANCED.md', 'LOCAL.md', 'OPTIONAL_OBSIDIAN.md',
-              'START_HERE.md', 'references/obsidian.md', 'references/hosts.md',
+              'START_HERE.md', 'docs/index.html', 'references/obsidian.md', 'references/hosts.md',
               'references/tracking.md', 'skills/obsidian/SKILL.md', 'LICENSE']
     shared = {name: allowed[name] for name in guides}
     shared['CHAT_STARTER.txt'] = allowed['CHAT_STARTER.txt']
@@ -63,6 +63,7 @@ def package(destination):
             f'# #LOCKEDIN Job Kit | {tier.title()}\n\n'
             f'Open [{guide}]({guide}) for setup. Copy [{starter}]({starter}) into a new private chat. '
             'Your first step is to share and review your résumé. Next, answer only the missing details.\n\n'
+            'Open the [workload planner](docs/index.html) to estimate daily and weekly effort offline.\n\n'
             'The other guides are included for offline reading. Desktop tools referenced in the Advanced guide '
             'come with the separate Advanced download.\n'
         ).encode()
@@ -71,6 +72,9 @@ def package(destination):
     starter = destination / 'CHAT_STARTER.txt'
     starter.write_bytes(allowed[starter.name])
     outputs.append(starter)
+    planner = destination / 'lockedin-usage-planner.html'
+    planner.write_bytes(allowed['docs/index.html'])
+    outputs.append(planner)
     lines = [f'{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.name}\n' for path in sorted(outputs)]
     (destination / 'SHA256SUMS.txt').write_text(''.join(lines))
     return outputs

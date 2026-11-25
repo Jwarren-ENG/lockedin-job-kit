@@ -1,5 +1,7 @@
 # Use #LOCKEDIN Job Kit with a local model
 
+Open the [offline workload planner](docs/index.html) in your browser. Adjust the Local assumptions using a recent draft. Enter a token processing budget only if you have measured one over the same period.
+
 Use this edition when you want your résumé and application drafts to stay on your computer. The Local download contains a starter, this guide and the optional dashboard guide. One short chat and a text file are enough.
 
 1. Open a local chat app you already use. With **LM Studio**, download a model that fits your computer before working offline, load it, then open a chat. With **Ollama**, select a locally downloaded model. In a terminal you can use `ollama list` to see installed models and `ollama run MODEL` with a name from that list. Use a local model and keep cloud providers and external tools off if you want offline processing. [LM Studio offline guide](https://lmstudio.ai/docs/app/offline) · [Ollama guide](https://docs.ollama.com/quickstart)

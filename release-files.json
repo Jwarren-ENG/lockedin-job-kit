@@ -70,6 +70,8 @@
     "editions/ADVANCED_STARTER.txt",
     "editions/LOCAL_STARTER.txt",
     "tests/test_editions.py",
-    "ui/src/ResumeIntake.tsx"
+    "ui/src/ResumeIntake.tsx",
+    "docs/index.html",
+    "tests/test-usage-planner.mjs"
   ]
 }

@@ -2,6 +2,8 @@
 
 **Start with Lite** if you usually type into ChatGPT or Claude. It works in small batches to conserve messages. The roughly $20 and $200 budgets in this kit describe two usage styles. Your provider and plan determine the tools and limits you actually have.
 
+Use the [workload planner](docs/index.html) to try a daily pace. Expand **Adjust Lite assumptions** and enter how many turns and review minutes your last application took.
+
 1. Open [ChatGPT](https://chatgpt.com/) or [Claude](https://claude.ai/) in a private conversation. Open the starter text included with your download, copy it, paste it into the chat and press Send. On GitHub, use the [Lite starter](CHAT_STARTER.txt).
 2. The assistant should ask only for your résumé first. It will read the document, show the facts it found and wait while you confirm or correct them. Use the **+** next to the message to attach a PDF or Word document. Pasting your work history also works. When it later asks about job preferences, “I like organizing complicated projects and want to stay in Denver” is enough to start exploring titles.
 3. After confirming the facts, choose **Skip past chats**, **Paste an excerpt**, or **Choose specific chats**. Any new detail comes back for your approval. Then answer a couple of missing questions at a time, such as where you would relocate, when you could start and your preferred base pay. You can say “skip”, “back” or “show my summary”. Tell it which requirements are firm. If an accomplishment is missing from your résumé, describe what you actually did. A student club, family business, volunteer shift or side project counts when you want to include it.

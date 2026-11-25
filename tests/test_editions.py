@@ -27,6 +27,7 @@ class EditionTests(unittest.TestCase):
                     self.assertIn(starter, bundle.read('START HERE.txt').decode())
                     self.assertIn('README.md', files)
                     self.assertIn('OPTIONAL_OBSIDIAN.md', files)
+                    self.assertEqual(bundle.read('docs/index.html'), (out/'lockedin-usage-planner.html').read_bytes())
                     self.assertEqual('scripts/jobkit.py' in files, tier == 'advanced')
                     self.assertIsNone(bundle.testzip())
                     if tier == 'advanced':

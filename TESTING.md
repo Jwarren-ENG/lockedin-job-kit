@@ -1,5 +1,9 @@
 # Release checks
 
+## Version 0.5.0
+
+Run `BROWSER_CHANNEL=chrome node tests/test-usage-planner.mjs` for the offline workload planner. It exercises keyboard input, daily and weekly arithmetic, edition assumptions, allowance units and reset periods, empty and invalid inputs, mobile layout and network isolation. The edition tests check that each ZIP carries the same HTML as the standalone release asset.
+
 ## Version 0.4.0
 
 The guided setup runs offline. The Chrome test uses a fictional résumé and verifies extraction, edits, the confirmation step, prefilled fields, named chat permission, excerpt-only use, back navigation, the private download and reset. The mobile layout was checked at 390 pixels. No web request or JavaScript error occurred during the test.

@@ -78,6 +78,8 @@ Start with a draft application so you can inspect the resume and answers. Enable
 
 ## Daily use
 
+Before setting a daily pace, open the [workload planner](docs/index.html). Set applications per active day and days per week. Try the turns, tokens and review minutes you observed on one real application. Use the same reset window if you compare with an account allowance.
+
 - “Find new jobs matching my profile.”
 - “Prepare these applications for review.”
 - “Check job emails and update my tracker.”

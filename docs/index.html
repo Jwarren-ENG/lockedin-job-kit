@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Application workload planner · #LOCKEDIN Job Kit</title>
+<style>
+:root{font:100%/1.5 ui-sans-serif,system-ui,sans-serif;color:#17271f;background:#f7f8f4;--ink:#17271f;--muted:#48594e;--green:#176345;--line:#cbd5ca;--paper:#fff;--tint:#e4eee3}
+*{box-sizing:border-box}body{margin:0}header{border-bottom:1px solid var(--line);background:var(--paper)}.wrap{width:min(68rem,calc(100% - 3rem));margin-inline:auto}.mast{display:flex;justify-content:space-between;align-items:center;min-height:4rem;gap:1rem}.brand{font-weight:800;letter-spacing:-.04em}.brand span{font-weight:440;letter-spacing:0;margin-left:.4em}a{color:var(--green);text-underline-offset:3px}main{padding-block:2.5rem 3.5rem}h1,h2,h3,p,fieldset{margin:0}h1{font-weight:620;font-size:clamp(2.1rem,5vw,3.8rem);letter-spacing:-.055em;line-height:1.07;max-width:17em}h2{font-size:1.5rem;letter-spacing:-.035em}h3{font-size:1.4rem;letter-spacing:-.025em}p{max-width:72ch}.lede,.hint,.meta,small{color:var(--muted)}.lede{margin:.65rem 0 1.6rem;font-size:1.08rem}.workload{padding:1.35rem 1.5rem;background:var(--tint);border:1px solid #c3d5c2;border-radius:.45rem;display:grid;grid-template-columns:minmax(0,2fr) minmax(12rem,1fr);gap:clamp(1.25rem,6vw,4rem);align-items:center}.volume label,.day-label,.control label,.allow-fields label{display:block;font-weight:600}.volume output{font-size:1.8rem;font-weight:650;margin-right:.4rem;font-variant-numeric:tabular-nums}.volume input{display:block;width:100%;margin:.4rem 0 0;min-height:2.15rem;accent-color:var(--green);cursor:pointer}.scale{display:flex;justify-content:space-between;color:var(--muted);font-size:.77rem}.workweek{display:flex;flex-wrap:wrap;align-items:baseline;gap:.45rem .7rem}.workweek p{width:100%;font-size:.95rem}select,input[type=number]{background:#fff;color:var(--ink);border:1px solid #89988c;border-radius:.22rem;min-height:2.65rem;padding:.38rem .5rem;font:inherit;max-width:100%}button,summary,input,select{touch-action:manipulation}:focus-visible{outline:3px solid #125d9a;outline-offset:3px}.section{margin-top:2rem}.section>.hint{margin:.35rem 0 1rem}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;align-items:start}.card,.allowance{background:var(--paper);border:1px solid var(--line);border-radius:.4rem}.card{padding:1.1rem 1.2rem}.meta{font-size:.87rem;margin-top:.08rem}.card table{width:100%;border-collapse:collapse;margin:1.15rem 0 .95rem;font-variant-numeric:tabular-nums}.card table th,.card table td{padding:.48rem .12rem;text-align:right}.card table thead th{font-size:.78rem;color:var(--muted);border-bottom:1px solid var(--line)}.card table tbody th{text-align:left;font-size:.91rem;font-weight:500}.card table td{font-size:.95rem}.card details{border-top:1px solid var(--line);padding-top:.55rem}summary{color:var(--green);cursor:pointer;font-weight:620;padding:.3rem 0}.control{display:grid;grid-template-columns:1fr 5.7rem;align-items:center;gap:.5rem;margin-top:.5rem}.control label{font-size:.88rem;font-weight:500}.control input{width:100%}.allowance{padding:1.25rem 1.45rem}.allowance p{margin:.3rem 0 .8rem}.allow-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1rem;align-items:end}.allow-fields label{font-size:.9rem}.allow-fields select,.allow-fields input{display:block;width:100%;margin-top:.3rem}.allowance output{display:block;margin-top:1rem;color:var(--green);font-weight:650}.field-error{color:#8b291d;font-size:.9rem;margin-top:.6rem}footer{margin-top:1.4rem;color:var(--muted);font-size:.92rem}footer p{margin:.4rem 0}.sr{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.card input:invalid,.allowance input:invalid{border-color:#963827}[hidden]{display:none!important}@media(max-width:52rem){.cards{grid-template-columns:1fr}.card table{margin:.6rem 0}.card table th,.card table td{width:33.33%}.workload{gap:1rem}}@media(max-width:38rem){.wrap{width:calc(100% - 2rem)}main{padding-top:1.75rem}.workload{grid-template-columns:1fr;padding:1rem}.allowance{padding:1rem}.workweek{border-top:1px solid #c3d5c2;padding-top:.8rem}.control{grid-template-columns:1fr 7rem}.allow-fields{grid-template-columns:1fr 1fr}.card{padding:1rem}}
+</style>
+</head>
+<body>
+<header><div class="wrap mast"><div class="brand">#LOCKEDIN <span>Job Kit</span></div><a href="https://github.com/Jwarren-ENG/lockedin-job-kit#readme">Kit guide</a></div></header>
+<main class="wrap">
+<h1>Application workload planner</h1>
+<p class="lede">Choose a daily pace to see how much conversation, text and review time each workflow could take.</p>
+<noscript>Enable JavaScript in your browser to use the planner. It works offline.</noscript>
+<section aria-label="Application volume" class="workload">
+  <div class="volume">
+    <label for="pace"><output id="count" for="pace" aria-hidden="true">5</output> applications per day</label>
+    <input type="range" id="pace" aria-label="Applications per day" min="0" max="50" step="1" value="5">
+    <div class="scale" aria-hidden="true"><span>0</span><span>25</span><span>50</span></div>
+  </div>
+  <div class="workweek"><label for="days" class="day-label">Active days per week</label>
+    <select id="days"><option>1</option><option>2</option><option>3</option><option>4</option><option selected>5</option><option>6</option><option>7</option></select>
+    <p id="week-count">25 applications in a planned week</p>
+  </div>
+</section>
+<section class="section" aria-labelledby="comparison">
+<h2 id="comparison">Estimated effort</h2>
+<p class="hint">The starting values are examples. Adjust each workflow to match a recent application of your own. Monthly figures are planning budgets.</p>
+<div class="cards" id="cards"></div>
+</section>
+<section class="section allowance" aria-labelledby="allow-title">
+<h2 id="allow-title">Compare with your own allowance</h2>
+<p class="hint">Optional. Enter a limit from your account, or a processing budget you set locally. Choose the unit and reset period it actually uses.</p>
+<div class="allow-fields">
+  <label>Workflow<select id="workflow"><option value="lite">Lite</option><option value="advanced">Advanced</option><option value="local">Local</option></select></label>
+  <label>Unit<select id="unit"><option value="turns">Turns</option><option value="tokens">Tokens</option></select></label>
+  <label>Allowance period<select id="period"><option value="day">One active day</option><option value="week">One week</option><option value="custom">Custom reset window</option></select></label>
+  <label id="custom-field" hidden>Applications in this window<input type="number" min="0" max="10000" step="1" id="custom-count" inputmode="numeric"></label>
+  <label>Your actual allowance<input type="number" min="1" step="1" id="limit" inputmode="numeric" placeholder="Enter a limit"></label>
+</div>
+<output id="allow-result" aria-live="polite"></output>
+</section>
+<footer><details><summary>How the estimates work</summary>
+<p>Applications × turns per application gives estimated turns. Multiply by average tokens per turn for total tokens. Review time uses your minutes per application. Weekly estimates cover the active days you selected.</p>
+<p>One turn means one prompt and one reply. Count input, reused context and output when estimating tokens. An allowance percentage compares matching units over the same period. A model’s context window measures the size of a request. Subscription prices alone do not specify a message or token allowance.</p>
+<p>The planner runs in this browser and clears its inputs when you reload. For an offline copy, open the planner HTML included in any edition of the kit.</p>
+</details></footer>
+</main>
+<script>
+'use strict';
+const byId = id => document.getElementById(id);
+const workflows = [
+  {id:'lite', name:'Lite', budget:'About $20 monthly budget', turns:3, tokens:1200, minutes:12},
+  {id:'advanced', name:'Advanced', budget:'About $200 monthly budget', turns:6, tokens:2000, minutes:8},
+  {id:'local', name:'Local', budget:'Runs on your computer', turns:4, tokens:1000, minutes:15}
+];
+const assumptions = [
+  {key:'turns', label:'Turns per application', min:1, max:1000},
+  {key:'tokens', label:'Tokens per turn', min:1, max:1000000},
+  {key:'minutes', label:'Review minutes per application', min:0, max:1440}
+];
+const fmt = new Intl.NumberFormat('en-US');
+const percent = new Intl.NumberFormat('en-US', {maximumFractionDigits:1});
+const allowanceEntries = new Map();
+let lastAllowanceKey = '';
+function time(minutes) {
+  if (minutes < 60) return minutes + ' min';
+  const remain = minutes % 60;
+  return fmt.format(Math.floor(minutes / 60)) + ' h' + (remain ? ' ' + remain + ' min' : '');
+}
+function count(input, min, max) {
+  const n = input.valueAsNumber;
+  return Number.isSafeInteger(n) && n >= min && n <= max ? n : null;
+}
+function asText(id, value) {byId(id).textContent = value;}
+function createCard(w) {
+  const div = document.createElement('article');
+  div.className = 'card'; div.setAttribute('aria-labelledby', w.id + '-title');
+  // This markup contains only the fixed labels and example values above.
+  div.innerHTML = '<h3 id="' + w.id + '-title">' + w.name + '</h3><p class="meta">' + w.budget + '</p>' +
+    '<table><caption class="sr">' + w.name + ' estimated effort</caption><thead><tr><td></td><th scope="col">Active day</th><th scope="col">Week</th></tr></thead><tbody>' +
+    [['turns','Turns'], ['tokens','Tokens'], ['minutes','Review time']].map(([key,label]) =>
+      '<tr><th scope="row">' + label + '</th><td id="' + w.id + '-' + key + '-day"></td><td id="' + w.id + '-' + key + '-week"></td></tr>').join('') +
+    '</tbody></table><details><summary>Adjust ' + w.name + ' assumptions</summary>' +
+    assumptions.map(a => '<div class="control"><label for="' + w.id + '-' + a.key + '">' + a.label + '</label><input type="number" step="1" inputmode="numeric" id="' + w.id + '-' + a.key + '" min="' + a.min + '" max="' + a.max + '" value="' + w[a.key] + '"></div>').join('') +
+    '</details><p class="field-error" role="status" id="' + w.id + '-error" hidden></p>';
+  byId('cards').append(div);
+}
+function readSettings(w) {
+  const values = {};
+  for (const a of assumptions) {
+    const input = byId(w.id + '-' + a.key);
+    values[a.key] = count(input, a.min, a.max);
+    input.setAttribute('aria-invalid', String(values[a.key] === null));
+    if (values[a.key] === null) {
+      asText(w.id + '-error', 'Enter a whole number from ' + fmt.format(a.min) + ' to ' + fmt.format(a.max) + ' for ' + a.label.toLowerCase() + '.');
+      byId(w.id + '-error').hidden = false;
+      return null;
+    }
+  }
+  byId(w.id + '-error').hidden = true;
+  return values;
+}
+function compare(models, day, week) {
+  const workflow = byId('workflow').value, unit = byId('unit').value, period = byId('period').value;
+  const key = [workflow, unit, period].join('/');
+  if (key !== lastAllowanceKey) {
+    if (lastAllowanceKey) allowanceEntries.set(lastAllowanceKey, [byId('limit').value, byId('custom-count').value]);
+    const [limit, sample] = allowanceEntries.get(key) || ['', ''];
+    byId('limit').value = limit; byId('custom-count').value = sample;
+    lastAllowanceKey = key;
+  }
+  byId('custom-field').hidden = period !== 'custom';
+  const limit = count(byId('limit'), 1, Number.MAX_SAFE_INTEGER);
+  const applications = period === 'day' ? day : period === 'week' ? week : count(byId('custom-count'), 0, 10000);
+  let message;
+  if (!byId('limit').value && !byId('limit').validity.badInput) message = 'Enter an allowance to see the estimated percentage.';
+  else if (limit === null) message = 'Enter a positive whole number for your allowance.';
+  else if (applications === null) message = 'Enter the number of applications planned in this reset window (0 to 10,000).';
+  else if (!models[workflow]) message = 'Complete the workflow assumptions to compare usage.';
+  else {
+    const model = models[workflow];
+    const used = applications * model.turns * (unit === 'tokens' ? model.tokens : 1);
+    const ratio = used / limit * 100;
+    const label = ratio > 0 && ratio < 0.1 ? 'less than 0.1%' : percent.format(ratio) + '%';
+    message = fmt.format(used) + ' of ' + fmt.format(limit) + ' ' + unit + ' · ' + label + ' of this allowance.';
+  }
+  asText('allow-result',message);
+}
+function update() {
+  const day = Number(byId('pace').value), week = day * Number(byId('days').value);
+  asText('count',day); asText('week-count',fmt.format(week) + (week === 1 ? ' application' : ' applications') + ' in a planned week');
+  const models = {};
+  for (const w of workflows) {
+    const m = models[w.id] = readSettings(w);
+    for (const [period, apps] of [['day',day], ['week',week]]) {
+      asText(w.id + '-turns-' + period, m ? fmt.format(apps * m.turns) : '—');
+      asText(w.id + '-tokens-' + period, m ? fmt.format(apps * m.turns * m.tokens) : '—');
+      asText(w.id + '-minutes-' + period, m ? time(apps * m.minutes) : '—');
+    }
+  }
+  compare(models, day, week);
+}
+workflows.forEach(createCard);
+document.addEventListener('input', update);
+document.addEventListener('change', update);
+update();
+</script>
+</body>
+</html>

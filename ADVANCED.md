@@ -55,6 +55,8 @@ Ask the assistant to read back the choices and list any missing information toge
 
 ## Use your time and message budget
 
+Open the [workload planner](docs/index.html) before changing a scheduled batch size. Adjust the Advanced assumptions to include research, tailoring and review. The calculator changes only the estimate. Change a live schedule or application cap separately.
+
 Start a run by checking the tracker for duplicates and recent source coverage. Rank leads in a short table before spending messages on tailored résumés. Review new or changed requirements once, group outstanding factual questions, and save a short end-of-run summary. Multiple workers need one shared reservation per employer and requisition, one daily limit, and a shared record of receipts. If the host cannot coordinate those writes, run one application worker. There is no reason to increase a daily cap because a higher subscription is available.
 
 ## Check your first result
