@@ -4,6 +4,10 @@ Saved checkboxes grant bounded standing authorization. Read current permissions 
 
 | Setting | Allows | Does not allow |
 |---|---|---|
+| read_chat_history | One setup review of the conversations the user explicitly names to suggest facts for confirmation | Searching other chats, keeping raw transcripts or recurring access |
+| use_computer | Operate the approved browser on employer forms within the recorded scope | Unrelated sites, a final submit without its own authorization, or access outside host controls |
+| share_address | Disclose the confirmed address type to approved recipients for the recorded purpose | Other recipients or substituting a work location for a home address |
+| obsidian_export | Generate and refresh the optional private dashboard | Uploading or syncing notes to an external service |
 | save_profile | Private local reuse of confirmed application facts | Public sharing or storing credentials |
 | save_demographics | Separate private optional answers | Sending them without answer_demographics |
 | auto_submit | Verified matching applications with sufficient answers and current review | Unknown answers, duplicates, assessments, offers or unlimited volume |

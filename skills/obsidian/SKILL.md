@@ -7,6 +7,8 @@ description: Create, organize, refresh, or troubleshoot a private Obsidian job-s
 
 Read [Obsidian reference](../../references/obsidian.md) and [tracking](../../references/tracking.md). Use the configured private workspace, never the plugin directory. An existing vault may use a different importer or schema: inspect its own instructions before choosing a tool.
 
+Default to spreadsheet tracking. A request to enable Obsidian can be recorded with the permissions command and the actual request as evidence. Before every export, read current obsidian_export permission. On revocation, stop exports and preserve existing notes. Folder existence alone never opts the user in. See the [optional user guide](../../OPTIONAL_OBSIDIAN.md).
+
 ## Establish the source of truth
 
 1. Locate the requested vault, its Home note, existing instructions, importer and enabled plugins. Read only the relevant notes and configuration. Do not assume a previously used path still applies or create a second vault when one already exists.

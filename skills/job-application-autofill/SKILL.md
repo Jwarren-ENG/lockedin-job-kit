@@ -9,7 +9,7 @@ Use the user's current authorization and the host's supported browser controls. 
 
 ## Load once, then fill by section
 
-For new graduate discovery before applying, follow [discovery guidance](../../references/discovery.md), including SimplifyJobs/New-Grad-Positions alongside APM List and Jobright. Verify official postings and deduplicate before treating aggregator entries as actionable roles.
+Before typing personal data or uploading anything, check use_computer, the approved site and current scope. An address disclosure, including an address embedded in the résumé, requires share_address plus the confirmed address type and recipient scope. If missing, draft privately or omit the address when permitted. Include share_address in consents_needed for any address actually shared. Recheck after permission changes. For discovery before applying, use the sources selected for this person in the [discovery guide](../../references/discovery.md). Verify official postings and deduplicate before treating aggregator entries as actionable roles.
 
 Default to a single-link workflow: deduplicate the role, prepare/reuse its current truthful resume, fill routine fields in batches, draft all permitted unique answers together, then perform one final review. Do not ask for known facts or routine reversible steps. Collect genuinely missing facts into one concise request after completing independent work. Keep host-required action-time confirmations at the actual boundary.
 

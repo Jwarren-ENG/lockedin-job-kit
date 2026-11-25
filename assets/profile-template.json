@@ -23,7 +23,8 @@
     "internship_hours": "",
     "travel": "",
     "relocation": "",
-    "languages": []
+    "languages": [],
+    "notice_period": ""
   },
   "search": {
     "roles": [],
@@ -35,13 +36,10 @@
     "currency": "USD",
     "pay_period": "year",
     "excluded_companies": [],
-    "sources": [
-      "https://apmlist.com/",
-      "https://github.com/jobright-ai/2026-Product-Management-New-Grad",
-      "https://github.com/SimplifyJobs/New-Grad-Positions"
-    ],
+    "sources": [],
     "timezone": "",
-    "daily_time": "08:00"
+    "daily_time": "08:00",
+    "preferred_base": null
   },
   "education": [],
   "experience": [],
@@ -52,5 +50,11 @@
     "authoritative_source": "resumes/base.tex",
     "page_limit": 1,
     "confirmed": false
-  }
+  },
+  "scope_notes": {
+    "computer": "",
+    "address": "",
+    "history": ""
+  },
+  "history_choice": "skip"
 }

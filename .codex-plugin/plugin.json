@@ -1,20 +1,20 @@
 {
   "name": "job-search-kit",
-  "version": "0.3.2",
-  "description": "Guided job-search onboarding, scoped permissions, LaTeX resumes and application tracking.",
+  "version": "0.4.0",
+  "description": "Interview-led job discovery, truthful résumés, private tracking and optional scheduled applications with #LOCKEDIN Job Kit.",
   "author": {
-    "name": "Job Search Kit"
+    "name": "#LOCKEDIN Job Kit"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "Job Search Kit",
+    "displayName": "#LOCKEDIN Job Kit",
     "shortDescription": "Find, apply and track with your own permissions.",
     "longDescription": "Set up a private profile and LaTeX resume, choose application and disclosure permissions, track opportunities and employer responses, and configure daily runs with supported host tools.",
-    "developerName": "Job Search Kit",
+    "developerName": "#LOCKEDIN Job Kit",
     "category": "Productivity",
     "capabilities": [],
     "defaultPrompt": [
-      "Set up my job search and permissions.",
+      "Ask for my résumé first, then show me the extracted facts to confirm.",
       "Find new roles matching my profile.",
       "Check my application responses and tracker."
     ]

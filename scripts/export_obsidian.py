@@ -39,6 +39,9 @@ def export(workspace):
     w=Path(workspace).expanduser().resolve()
     if not (w/'profile.json').is_file(): raise ValueError('Initialize the private workspace first')
     if w==jobkit.ROOT or jobkit.ROOT in w.parents: raise ValueError('Vault must remain outside the plugin')
+    grants = jobkit.read(w/'permissions.json')['grants']
+    if not grants.get('obsidian_export'):
+        raise ValueError('Obsidian export is off. Enable it in your job search permissions first.')
     v=w/'obsidian'; v.mkdir(exist_ok=True)
     with jobkit.connect(w) as db:
         jobs=[json.loads(r[0]) for r in db.execute('SELECT data FROM jobs ORDER BY id')]

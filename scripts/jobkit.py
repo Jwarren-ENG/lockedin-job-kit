@@ -9,13 +9,16 @@ from pathlib import Path
 import sqlite3
 import sys
 import tempfile
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
 ROOT = Path(__file__).resolve().parents[1]
 PERMISSIONS = ('save_profile','save_demographics','auto_submit','read_email','daily_runs',
                'create_accounts','recruitment_privacy','talent_pool','partner_sharing','ai_notes',
                'answer_demographics')
+LEGACY_PERMISSIONS = PERMISSIONS
+PERMISSIONS = LEGACY_PERMISSIONS + ('use_computer', 'share_address', 'obsidian_export', 'read_chat_history')
 STATES = ('Discovered','Shortlisted','Preparing','Ready','Submitting','Submitted',
           'Submission uncertain','Interview','Assessment','Rejected','Offer','Withdrawn','Closed')
 TERMINAL = ('Submitted','Interview','Assessment','Rejected','Offer','Withdrawn')
@@ -89,7 +92,7 @@ def init(workspace):
     write(w/'permissions.json',{'version':1,'revision':now(),'paused':False,'max_submissions_per_day':3,
           'grants':{p:False for p in PERMISSIONS},'evidence':None})
     write(w/'demographics.json',{})
-    write(w/'sources.json',read(ROOT/'assets/sources.json'))
+    write(w/'sources.json',[])
     write(w/'schedule.json',{'status':'not_configured','host_id':None,'timezone':None,'time':'08:00','last_successful_run':None})
     (w/'resumes/base.tex').write_text((ROOT/'assets/resume-template.tex').read_text(),encoding='utf-8')
     (w/'.gitignore').write_text('*\n!.gitignore\n',encoding='utf-8')
@@ -101,8 +104,12 @@ def import_profile(w, source, evidence):
     bundle = read(source)
     p = bundle['profile']
     grants = bundle['permissions']['grants']
+    if set(grants) == set(LEGACY_PERMISSIONS):
+        grants = {key: grants.get(key, False) for key in PERMISSIONS}
     if set(grants) != set(PERMISSIONS) or any(type(v) is not bool for v in grants.values()):
         raise ValueError('Permission keys must exactly match supported booleans')
+    if grants.get('read_chat_history') and not str(p.get('scope_notes', {}).get('history') or '').strip():
+        raise ValueError('Name the specific conversations authorized for this setup')
     if not grants['save_profile']: raise ValueError('Local profile storage was not authorized')
     if not evidence.strip(): raise ValueError('Record the user action authorizing import')
     if not p.get('identity',{}).get('name') or '@' not in p.get('identity',{}).get('application_email',''):
@@ -111,7 +118,13 @@ def import_profile(w, source, evidence):
     if type(limit) is not int or not 1 <= limit <= 50: raise ValueError('Daily limit must be 1–50')
     dem = bundle.get('demographics',{})
     if dem and not grants['save_demographics']: raise ValueError('Demographic storage was not authorized')
-    permissions = {'version':1,'revision':now(),'paused':False,'max_submissions_per_day':limit,'grants':grants,'evidence':evidence}
+    zone = p.get('search', {}).get('timezone') or 'UTC'
+    try:
+        ZoneInfo(zone)
+    except (ValueError, ZoneInfoNotFoundError) as exc:
+        raise ValueError('Choose a time zone such as America/New_York') from exc
+    paused = read(Path(w)/'permissions.json').get('paused', False)
+    permissions = {'version':1,'revision':now(),'paused':paused,'max_submissions_per_day':limit,'grants':grants,'evidence':evidence}
     # Import is a user review step, never inferred from a resume or webpage.
     p['confirmed_at'] = now()
     write(Path(w)/'profile.json',p)
@@ -146,6 +159,10 @@ def update_permissions(w, source, evidence):
     if set(updates)-set(PERMISSIONS) or any(type(v) is not bool for v in updates.values()): raise ValueError('Invalid grant update')
     if 'paused' in changes and type(changes['paused']) is not bool: raise ValueError('paused must be boolean')
     if 'max_submissions_per_day' in changes and (type(changes['max_submissions_per_day']) is not int or not 1<=changes['max_submissions_per_day']<=50): raise ValueError('Daily limit must be 1–50')
+    if updates.get('read_chat_history'):
+        profile = read(Path(w)/'profile.json')
+        if not str(profile.get('scope_notes', {}).get('history') or '').strip():
+            raise ValueError('Name the specific conversations authorized for this setup')
     p=read(Path(w)/'permissions.json');p['grants'].update(updates)
     for field in ('paused','max_submissions_per_day'):
         if field in changes:p[field]=changes[field]
@@ -159,6 +176,8 @@ def gate(w, jid, review_file):
     with connect(w) as db: j=loadjob(db,jid)
     if permission.get('paused'): reasons.append('Automation is paused')
     if not permission['grants'].get('save_profile'): reasons.append('Profile reuse permission revoked')
+    if not permission['grants'].get('use_computer'):
+        reasons.append('Computer use for employer forms has not been authorized')
     if not p.get('confirmed_at'): reasons.append('Profile has not been confirmed')
     if not p.get('resume',{}).get('confirmed'): reasons.append('Authoritative resume facts have not been confirmed')
     if not permission['grants'].get('auto_submit'):
@@ -188,8 +207,12 @@ def reserve(w,jid,review_file):
         current=loadjob(db,jid)
         if current['status'] in TERMINAL+('Submitting','Submission uncertain','Closed'):
             return {'allowed':False,'reasons':['Submission already reserved or completed']}
-        count=db.execute("SELECT count(*) FROM events WHERE kind='submission_reserved' AND substr(at,1,10)=?",(now()[:10],)).fetchone()[0]
-        if count>=p['max_submissions_per_day']: return {'allowed':False,'reasons':['Daily submission limit reached (UTC day)']}
+        zone = ZoneInfo(read(Path(w)/'profile.json').get('search', {}).get('timezone') or 'UTC')
+        local_time = datetime.fromisoformat(now()).astimezone(zone)
+        midnight = local_time.replace(hour=0, minute=0, second=0, microsecond=0)
+        bounds = tuple(t.astimezone(timezone.utc).isoformat() for t in (midnight, midnight + timedelta(days=1)))
+        count = db.execute("SELECT count(*) FROM events WHERE kind='submission_reserved' AND at>=? AND at<?", bounds).fetchone()[0]
+        if count>=p['max_submissions_per_day']: return {'allowed':False,'reasons':['Daily submission limit reached for '+str(zone)]}
         # An unresolved reservation is deliberately never auto-retried.
         current['status']='Submitting'; current['authorization']={'at':now(),'revision':p['revision'],'review':r}
         putjob(db,current); event(db,'submission_reserved',{'revision':p['revision']},jid)

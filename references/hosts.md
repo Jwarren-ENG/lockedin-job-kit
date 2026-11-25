@@ -4,7 +4,7 @@ This is a skill plugin with local tracking helpers. It does not include a browse
 
 ## Codex desktop
 
-Install from the personal marketplace/share flow or a user-configured marketplace. Start a new task after installation and ask to use job-search-kit. Use available browser tools, connected email provider and spreadsheet/PDF skills. For requested recurrence, discover the native automation tool and prefer a thread heartbeat. Inspect existing automation first and extend the matching job-search monitor rather than duplicating it. If one task permits one heartbeat, combine authorized job search and email tracking. Respect quiet/no-change output requirements. Verify the returned schedule ID/status before reporting active. A plugin file cannot itself schedule runs.
+Install from the personal marketplace/share flow or a user-configured marketplace. Start a new task after installation and ask to use job-search-kit. Use available browser tools, connected email provider and spreadsheet/PDF skills. For requested recurrence, discover the native automation tool and choose a schedule type that can run at the requested times. Inspect existing automation first and extend the matching job-search monitor rather than duplicating it. If one task permits one heartbeat, combine authorized job search and email tracking. Respect quiet/no-change output requirements. Verify the returned schedule ID/status before reporting active. A plugin file cannot itself schedule runs.
 
 ## Claude Code
 
@@ -17,6 +17,14 @@ Use the host's custom-plugin upload flow for the supplied ZIP or `.plugin` archi
 ## Other Claude interfaces
 
 A normal chat without plugin support, local file access, browser controls or a scheduler cannot run the entire workflow. It can help with profile review and resume text; do not label that as an installed or automated plugin. Never claim the same tool names or runtime paths work across all hosts.
+
+## Chat-only and local use
+
+Paste the appropriate starter in an ordinary chat. The default tracker can be a saved text table. Local users can paste employer job text from a browser and use an offline model without account connections. See the [Local guide](../LOCAL.md). Connect additional tools only for the scope the user selected.
+
+## History during setup
+
+Ask before reading any past chats. Only use the conversations selected by the user, with a host that supports that scope. A pasted excerpt lets the person share selected lines without granting a connector access. Treat statements as proposed facts for confirmation. Revoke this setup-only permission after reviewing the suggestions.
 
 ## Daily prompt template
 

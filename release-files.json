@@ -62,6 +62,14 @@
     "skills/job-application-autofill/references/ats.md",
     "skills/job-application-autofill/scripts/test_autofill.py",
     "skills/job-application-autofill/scripts/autofill.py",
-    "skills/obsidian/SKILL.md"
+    "skills/obsidian/SKILL.md",
+    "ADVANCED.md",
+    "BEGINNER.md",
+    "LOCAL.md",
+    "OPTIONAL_OBSIDIAN.md",
+    "editions/ADVANCED_STARTER.txt",
+    "editions/LOCAL_STARTER.txt",
+    "tests/test_editions.py",
+    "ui/src/ResumeIntake.tsx"
   ]
 }

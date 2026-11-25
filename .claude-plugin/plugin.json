@@ -1,8 +1,8 @@
 {
   "name": "job-search-kit",
-  "version": "0.3.2",
-  "description": "Guided job-search onboarding, scoped application permissions, LaTeX resumes, application tracking and scheduled agent workflows.",
+  "version": "0.4.0",
+  "description": "Interview-led job discovery, truthful résumés, private tracking and optional scheduled applications with #LOCKEDIN Job Kit.",
   "author": {
-    "name": "Job Search Kit"
+    "name": "#LOCKEDIN Job Kit"
   }
 }

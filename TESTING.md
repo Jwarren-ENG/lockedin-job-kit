@@ -1,3 +1,13 @@
+# Release checks
+
+## Version 0.4.0
+
+The guided setup runs offline. The Chrome test uses a fictional résumé and verifies extraction, edits, the confirmation step, prefilled fields, named chat permission, excerpt-only use, back navigation, the private download and reset. The mobile layout was checked at 390 pixels. No web request or JavaScript error occurred during the test.
+
+Run `python3 -m unittest discover -s tests`, `python3 -m unittest discover -s skills/job-application-autofill/scripts`, `BROWSER_CHANNEL=chrome node tests/test-setup.mjs` and `node tests/test-workbook.mjs`. The suites check opt-in defaults and revocation, legacy profiles and pause state, local midnight, empty initial source lists, spreadsheet preservation, archive contents, offline guide links and release checksums.
+
+A local Ollama session with qwen2.5:7b asked for the résumé, extracted the stated details from a fictional example and presented the optional history choices after confirmation. It also repeated the confirmation. The prompt guides a model; applicants should review its output. Hosted subscription limits and a new user's scheduling or conversation permissions depend on that account and require a setup check.
+
 ## v0.3.0 validation
 
 Executed: 23 tracking/Obsidian tests and 28 autofill regression tests, release allowlist audit, package generation and diff whitespace checks. Autofill tests cover duplicate contact prevention, scoped aliases, stale sources, disclosure gates and evidence-grounded answers. Run `python3 -m unittest discover -s skills/job-application-autofill/scripts -p 'test_*.py' -v` in addition to the main suite.

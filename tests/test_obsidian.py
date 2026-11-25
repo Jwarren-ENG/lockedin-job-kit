@@ -10,9 +10,25 @@ import jobkit
 import export_obsidian as vault
 
 class VaultTests(unittest.TestCase):
+    def allow_export(self,w,enabled=True):
+        changes=w/'change.json'
+        jobkit.write(changes,{'grants':{'obsidian_export':enabled}})
+        jobkit.update_permissions(w,changes,'test user choice')
+
+    def test_export_needs_opt_in_even_for_existing_vault(self):
+        with tempfile.TemporaryDirectory() as t:
+            w=Path(t)/'workspace'; jobkit.init(w)
+            with self.assertRaisesRegex(ValueError,'export is off'): vault.export(w)
+            self.assertFalse((w/'obsidian').exists())
+            self.allow_export(w); vault.export(w)
+            home=w/'obsidian/Home.md'; before=home.stat().st_mtime_ns
+            self.allow_export(w,False)
+            with self.assertRaisesRegex(ValueError,'export is off'): vault.export(w)
+            self.assertEqual(home.stat().st_mtime_ns,before)
+
     def test_refresh_preserves_notes_and_counts_rejection_as_submitted(self):
         with tempfile.TemporaryDirectory() as t:
-            w=Path(t)/'workspace';jobkit.init(w)
+            w=Path(t)/'workspace';jobkit.init(w);self.allow_export(w)
             p=Path(t)/'job.json';p.write_text(json.dumps({'company':'Example','role':'Analyst','url':'https://example.com/jobs/1'}))
             jid=jobkit.upsert(w,p)['id']
             jobkit.transition(w,jid,'Submitted','fictional receipt')
@@ -26,7 +42,7 @@ class VaultTests(unittest.TestCase):
 
     def test_reschedule_cancel_and_duplicate(self):
         with tempfile.TemporaryDirectory() as t:
-            w=Path(t)/'workspace';jobkit.init(w)
+            w=Path(t)/'workspace';jobkit.init(w);self.allow_export(w)
             p=w/'interviews/event.json'
             m={'id':'test','company':'Example','role':'Analyst','status':'Scheduled','start':'2099-06-10T14:00:00-04:00','end':'2099-06-10T14:30:00-04:00'}
             p.write_text(json.dumps(m));self.assertEqual(vault.export(w)['upcoming_interviews'],1)

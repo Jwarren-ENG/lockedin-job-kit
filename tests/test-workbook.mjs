@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import os from 'node:os';
+import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
@@ -9,7 +10,7 @@ try{
  await fs.mkdir(path.join(w,'exports'));
  const data=[{id:'one',company:'Example A',role:'Analyst',status:'Submitted',salary_min:100000,notes:'Initial note'},{id:'two',company:'Example B',role:'Associate',status:'Ready'}];
  const input=path.join(w,'exports/applications.json'),file=path.join(w,'Application Tracker.xlsx');
- const script=new URL('../scripts/export-workbook.mjs',import.meta.url).pathname;
+ const script=fileURLToPath(new URL('../scripts/export-workbook.mjs',import.meta.url));
  await fs.writeFile(input,JSON.stringify(data));execFileSync(process.execPath,[script,w]);
  let wb=await SpreadsheetFile.importXlsx(await FileBlob.load(file));let t=wb.worksheets.getItem('Tracker');
  assert.equal(t.getRange('A2').values[0][0],'one');assert.equal(t.getRange('A3').values[0][0],'two');

@@ -1,37 +1,26 @@
-# Job Search Kit
+# #LOCKEDIN Job Kit
 
-Bring a résumé and one job posting. The kit helps you decide whether a job fits, tailor a résumé you can stand behind, and remember what happened after you applied.
+Start by uploading your résumé. Confirm the facts the kit reads from it, then answer only what’s missing. The kit interviews you, finds places to look for those roles, and uses your own examples to tailor an application. A job link is optional.
 
-## Try it in your first chat
+| Edition | Best for | Start here |
+| --- | --- | --- |
+| **Lite** | Regular ChatGPT or Claude use on a roughly $20 monthly budget. Compare up to three leads at a time, draft one application, and save a short summary between chats. | [Beginner guide](BEGINNER.md) · [Download Lite](https://github.com/Jwarren-ENG/lockedin-job-kit/releases/latest/download/lockedin-lite.zip) |
+| **Advanced** | Higher usage budgets around $200 per month, or anyone with the necessary tools. Keep private files, revisit more sources, and schedule searches or applications with the permissions you choose. | [Advanced setup](ADVANCED.md) · [Download Advanced](https://github.com/Jwarren-ENG/lockedin-job-kit/releases/latest/download/lockedin-advanced.zip) |
+| **Local** | A model running on your computer. Paste one posting at a time, draft offline and save a small text tracker. | [Local setup](LOCAL.md) · [Download Local](https://github.com/Jwarren-ENG/lockedin-job-kit/releases/latest/download/lockedin-local.zip) |
 
-1. Open [ChatGPT](https://chatgpt.com/) or [Claude](https://claude.ai/). Use a private chat or a project only you can access.
-2. Attach your résumé with the **+** button, or paste the experience you want to use. Paste the employer’s job description if you have it handy.
-3. Open the [starter instructions](CHAT_STARTER.txt), copy the text into your message, and send it. You can also [download the starter as a text file](https://github.com/Jwarren-ENG/job-search-kit/releases/latest/download/CHAT_STARTER.txt) and attach it. The same instructions work in other assistants that accept pasted text.
+The dollar amounts are planning budgets. You can use any edition with tools you already have. Check file, browsing and scheduling access in your own app before relying on them.
 
-Your first result should tell you which job requirements you can demonstrate, flag unanswered questions and give you a résumé edit you can review. You choose what to send to an employer. Everything above works by copying and pasting, including on a phone.
+**First time?** Open the [Lite starter text](CHAT_STARTER.txt), copy it into a private ChatGPT or Claude conversation and press Send. It should ask only for your résumé or work history first. After you check its summary, you can choose whether to use a specific past chat, then answer questions about roles, relocation, salary and other missing details. If you have never had a paid job, start with coursework, volunteering or a project you enjoyed.
 
-| What would you like to do? | Where to go |
-| --- | --- |
-| Try one application in ChatGPT or Claude | [Follow the steps for your app](START_HERE.md#use-a-chat) |
-| Keep working on your search in future chats | [Save your search](START_HERE.md#keep-your-search-between-chats) |
-| Let an assistant with computer access maintain files or help fill a form | [Set up the desktop kit](START_HERE.md#set-up-the-desktop-kit) |
-| See upcoming interviews in Obsidian | [Open your dashboard](START_HERE.md#open-your-obsidian-dashboard) |
+**Returning?** Bring your saved search summary and tracker. Ask “Find the best new opening for me and show me which experience supports the résumé edit.” When you receive an interview invitation, the tracker can point you back to the résumé you sent.
 
-## What to ask next
+## Choose your setup
 
-* **Compare openings.** “I want a remote operations job in my state. Compare these two postings. Show the posted base salary and any travel requirement.”
-* **Review an application.** “Show me the exact résumé wording you changed and the experience that supports each change.”
-* **Update the tracker.** “I received a first round interview invitation. Here is the role and date. Add it to my tracker and help me prepare.”
-* **Pick up tomorrow.** “Give me a short search summary and an updated tracker I can save for our next chat.”
-
-## What the desktop kit adds
-
-The [full download](https://github.com/Jwarren-ENG/job-search-kit/releases/latest/download/job-search-kit.zip) includes a setup form that opens on your computer, a blank résumé template and a tracker. A compatible assistant can keep a copy of the exact résumé used for each application, check for duplicates, and export a spreadsheet or Obsidian dashboard. Browser access, email and scheduled searches each depend on the tools available in your app and the permissions you give it. [Desktop setup and permissions](START_HERE.md#set-up-the-desktop-kit)
-
-## Share the kit
-
-Share the clean starter file or the release ZIP. Keep your completed setup file, résumés, tracker and interview links in your own private folder. If someone opens your link and sees a GitHub sign-in or 404 page, they may need repository access. You can send them a clean copy of the starter text directly. [Privacy guide](PRIVACY.md)
+* [Open the kit in your app](START_HERE.md) for instructions covering ChatGPT, Claude and desktop assistants.
+* [Set up a schedule](ADVANCED.md#schedule-your-search) for a verified recurring search or a simple reminder.
+* [Add Obsidian if you want an interview dashboard](OPTIONAL_OBSIDIAN.md). A spreadsheet works on its own.
+* [Share a clean copy](PRIVACY.md). Send a release ZIP to someone without repository access. Keep completed forms, application history and résumé files in your own private folder.
 
 ## For maintainers
 
-The [host guide](references/hosts.md) covers plugins and scheduling. The [test guide](TESTING.md) lists verification commands and runtime requirements. To build a release, run the Python tests, the release audit and `python3 scripts/package.py dist`. Include new distributable files in `release-files.json`. [License](LICENSE) · [Component attribution](ui/SHADCN-LICENSE.md)
+The existing plugin identifier and command remain `job-search-kit` and `/job-search-kit:start`. The full package is also available under the previous download filenames. The [host guide](references/hosts.md) covers integrations, and the [test guide](TESTING.md) covers builds, checks and packaging. [License](LICENSE) · [Component attribution](ui/SHADCN-LICENSE.md)

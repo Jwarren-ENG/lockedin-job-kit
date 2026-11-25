@@ -15,4 +15,4 @@ Use `jobkit.py status <id> <state> --evidence <evidence> --event-key <stable-id>
 
 Report next actions and actual evidence. Run interview-prep when requested. Pause/revoke requests take effect immediately: `jobkit.py pause` blocks future application reservations; also pause/delete the matching native schedule through host tools when authorized. Disabling a connector permission should end that use immediately.
 
-When Obsidian tracking is configured, use [the Obsidian skill](../obsidian/SKILL.md) to refresh the existing vault after source updates and verify Home/calendar consistency. Local refresh does not verify remote sync.
+When the current obsidian_export permission is enabled, use [the Obsidian skill](../obsidian/SKILL.md) to refresh the existing vault after source updates and verify Home/calendar consistency. Local refresh does not verify remote sync.

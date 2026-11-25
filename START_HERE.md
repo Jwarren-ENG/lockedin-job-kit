@@ -1,24 +1,24 @@
-# Start your job search
+# Open #LOCKEDIN Job Kit in your app
 
 ## Use a chat
 
-Have your latest résumé and one job description ready. If you are still writing your résumé, a few lines describing your work and education are enough to begin.
+Choose the [Beginner guide](BEGINNER.md), [Advanced guide](ADVANCED.md) or [Local guide](LOCAL.md). Have your latest résumé or work history handy. The kit first reads the résumé and asks you to confirm what it found. You then choose whether any specific past chat may supply extra context. It asks about the work you want and any remaining application details afterwards. If you are still writing your résumé, a few lines describing your work and education are enough to begin.
 
 ### ChatGPT
 
 1. Open [ChatGPT](https://chatgpt.com/) and start a new private conversation.
 2. Select **+** next to the message box, choose **Add photos & files**, and select your résumé. You can also paste the relevant parts.
-3. Copy the [starter instructions](CHAT_STARTER.txt) into the message. Underneath, paste the job description or the employer’s link. If ChatGPT cannot open the link, paste the description. Send the message and answer any questions about your goals. [ChatGPT file help](https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt)
+3. Copy the [starter instructions](CHAT_STARTER.txt) into the message. A job description or an employer’s link is optional. If ChatGPT cannot open the link, paste the description. Send the message and answer any questions about your goals. [ChatGPT file help](https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt)
 
 ### Claude
 
 1. Open [Claude](https://claude.ai/) and start a new private conversation.
 2. Select **+**, choose **Add files or photos**, and attach your résumé. You can drag it into the chat on a computer.
-3. Paste the [starter instructions](CHAT_STARTER.txt) and a job description. Send them together. If your résumé is on another device, paste a short work history for now. [Claude file help](https://support.claude.com/en/articles/8241126-upload-files-to-claude)
+3. Paste the [starter instructions](CHAT_STARTER.txt) and send them. Add a posting if you already have one. If your résumé is on another device, paste a short work history for now. [Claude file help](https://support.claude.com/en/articles/8241126-upload-files-to-claude)
 
 ### Another chat app
 
-Paste the same starter text, your work history and the job description into a private conversation. If the app cannot browse, supply the text and date from the employer’s page yourself.
+Paste the same starter text, your work history and the kind of job you want into a private conversation. If the app cannot browse, supply the text and date from the employer’s page yourself.
 
 **What a first result looks like.** Suppose a posting asks for Excel and weekly reporting. Your résumé says you prepared a weekly inventory report in Excel. A good first draft keeps both details. If the posting also asks for SQL and your résumé is silent, the assistant should ask whether you have used it. Read the proposed wording before using it.
 
@@ -49,12 +49,12 @@ The setup form opens in your existing browser. Node.js and developer build tools
 
 ### Open the setup form
 
-1. Download the [desktop ZIP](https://github.com/Jwarren-ENG/job-search-kit/releases/latest/download/job-search-kit.zip) and unzip it. If your computer asks where to extract it, choose a new folder called `job-search-kit`. You don't need to build the interface.
-2. Open **assets/setup.html** in your browser. Fill in your details, target roles and permissions. All choices start off. Download your private setup file somewhere outside this repository.
+1. Download the [desktop ZIP](https://github.com/Jwarren-ENG/lockedin-job-kit/releases/latest/download/job-search-kit.zip) and unzip it. If your computer asks where to extract it, choose a new folder called `job-search-kit`. You don't need to build the interface.
+2. Open **assets/setup.html** in your browser. Start by pasting your résumé text or choosing a text file. Check the extracted facts, then step through the missing details and permissions. You can paste from a PDF or Word file, or use the assistant to read the original attachment. All choices start off. Download your private setup file somewhere outside this repository.
 3. Open the kit in your assistant using an option below. Attach your existing résumé, and your downloaded setup file through the assistant's normal file controls.
 4. Paste this:
 
-> Read skills/start/SKILL.md and set up Job Search Kit for me. Use my attached setup and resume. Save my private workspace outside this code folder. Confirm my resume facts, test available tools, create my tracker, and offer an Obsidian board and calendar. Ask me about anything missing. Configure daily searches and email tracking only according to my permissions. Show me what is ready and what still needs connecting.
+> Read skills/start/SKILL.md and interview me to set up #LOCKEDIN Job Kit. Use my attached setup and resume. Save my private workspace outside this code folder. Confirm my resume facts, test available tools, create my tracker, and help me choose sources for the role I want. Ask me about anything missing. Configure daily searches and email tracking only according to my permissions. Show me what is ready and what still needs connecting.
 
 ### Open the kit in your desktop assistant
 
@@ -68,13 +68,7 @@ Ask your desktop assistant to show which tools it can use in this session. If an
 
 ## Open your Obsidian dashboard
 
-1. Install Obsidian from its official download page above.
-2. Ask your assistant: “Create my Obsidian job-search vault.”
-3. In Obsidian, choose **Open folder as vault** and select the generated `obsidian` folder inside your private workspace.
-4. Open **Home**. Use **Application Board** and **Calendar** to browse your records.
-5. For a column-style board, open **Settings → Community plugins → Browse**, find **Kanban**, and install and enable it. This is optional; the notes and calendar work without it.
-
-To use the vault on your phone, install Obsidian there too and configure your chosen sync service. Use only one sync service for the vault. See [Obsidian details](references/obsidian.md) for refresh behavior and calendar limitations.
+If you want interview notes and a calendar in Obsidian, follow the [optional setup guide](OPTIONAL_OBSIDIAN.md). You can keep using the spreadsheet alone.
 
 ## Before your first application
 
