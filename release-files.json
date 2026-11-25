@@ -72,6 +72,7 @@
     "tests/test_editions.py",
     "ui/src/ResumeIntake.tsx",
     "docs/index.html",
-    "tests/test-usage-planner.mjs"
+    "tests/test-usage-planner.mjs",
+    "docs/.nojekyll"
   ]
 }
