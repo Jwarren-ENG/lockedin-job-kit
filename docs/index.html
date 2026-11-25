@@ -8,6 +8,14 @@
 <style>
 :root{font:100%/1.5 ui-sans-serif,system-ui,sans-serif;color:#17271f;background:#f7f8f4;--ink:#17271f;--muted:#48594e;--green:#176345;--line:#cbd5ca;--paper:#fff;--tint:#e4eee3}
 *{box-sizing:border-box}body{margin:0}header{border-bottom:1px solid var(--line);background:var(--paper)}.wrap{width:min(68rem,calc(100% - 3rem));margin-inline:auto}.mast{display:flex;justify-content:space-between;align-items:center;min-height:4rem;gap:1rem}.brand{font-weight:800;letter-spacing:-.04em}.brand span{font-weight:440;letter-spacing:0;margin-left:.4em}a{color:var(--green);text-underline-offset:3px}main{padding-block:2.5rem 3.5rem}h1,h2,h3,p,fieldset{margin:0}h1{font-weight:620;font-size:clamp(2.1rem,5vw,3.8rem);letter-spacing:-.055em;line-height:1.07;max-width:17em}h2{font-size:1.5rem;letter-spacing:-.035em}h3{font-size:1.4rem;letter-spacing:-.025em}p{max-width:72ch}.lede,.hint,.meta,small{color:var(--muted)}.lede{margin:.65rem 0 1.6rem;font-size:1.08rem}.workload{padding:1.35rem 1.5rem;background:var(--tint);border:1px solid #c3d5c2;border-radius:.45rem;display:grid;grid-template-columns:minmax(0,2fr) minmax(12rem,1fr);gap:clamp(1.25rem,6vw,4rem);align-items:center}.volume label,.day-label,.control label,.allow-fields label{display:block;font-weight:600}.volume output{font-size:1.8rem;font-weight:650;margin-right:.4rem;font-variant-numeric:tabular-nums}.volume input{display:block;width:100%;margin:.4rem 0 0;min-height:2.15rem;accent-color:var(--green);cursor:pointer}.scale{display:flex;justify-content:space-between;color:var(--muted);font-size:.77rem}.workweek{display:flex;flex-wrap:wrap;align-items:baseline;gap:.45rem .7rem}.workweek p{width:100%;font-size:.95rem}select,input[type=number]{background:#fff;color:var(--ink);border:1px solid #89988c;border-radius:.22rem;min-height:2.65rem;padding:.38rem .5rem;font:inherit;max-width:100%}button,summary,input,select{touch-action:manipulation}:focus-visible{outline:3px solid #125d9a;outline-offset:3px}.section{margin-top:2rem}.section>.hint{margin:.35rem 0 1rem}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;align-items:start}.card,.allowance{background:var(--paper);border:1px solid var(--line);border-radius:.4rem}.card{padding:1.1rem 1.2rem}.meta{font-size:.87rem;margin-top:.08rem}.card table{width:100%;border-collapse:collapse;margin:1.15rem 0 .95rem;font-variant-numeric:tabular-nums}.card table th,.card table td{padding:.48rem .12rem;text-align:right}.card table thead th{font-size:.78rem;color:var(--muted);border-bottom:1px solid var(--line)}.card table tbody th{text-align:left;font-size:.91rem;font-weight:500}.card table td{font-size:.95rem}.card details{border-top:1px solid var(--line);padding-top:.55rem}summary{color:var(--green);cursor:pointer;font-weight:620;padding:.3rem 0}.control{display:grid;grid-template-columns:1fr 5.7rem;align-items:center;gap:.5rem;margin-top:.5rem}.control label{font-size:.88rem;font-weight:500}.control input{width:100%}.allowance{padding:1.25rem 1.45rem}.allowance p{margin:.3rem 0 .8rem}.allow-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1rem;align-items:end}.allow-fields label{font-size:.9rem}.allow-fields select,.allow-fields input{display:block;width:100%;margin-top:.3rem}.allowance output{display:block;margin-top:1rem;color:var(--green);font-weight:650}.field-error{color:#8b291d;font-size:.9rem;margin-top:.6rem}footer{margin-top:1.4rem;color:var(--muted);font-size:.92rem}footer p{margin:.4rem 0}.sr{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.card input:invalid,.allowance input:invalid{border-color:#963827}[hidden]{display:none!important}@media(max-width:52rem){.cards{grid-template-columns:1fr}.card table{margin:.6rem 0}.card table th,.card table td{width:33.33%}.workload{gap:1rem}}@media(max-width:38rem){.wrap{width:calc(100% - 2rem)}main{padding-top:1.75rem}.workload{grid-template-columns:1fr;padding:1rem}.allowance{padding:1rem}.workweek{border-top:1px solid #c3d5c2;padding-top:.8rem}.control{grid-template-columns:1fr 7rem}.allow-fields{grid-template-columns:1fr 1fr}.card{padding:1rem}}
+.costs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;align-items:start}
+.costs h3{margin-bottom:.35rem}.costs .allow-fields{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem}
+.costs .wide{grid-column:1/-1}.costs input,.costs select{min-width:0}
+.cost-totals{display:grid;grid-template-columns:auto 1fr;gap:.35rem .75rem;border-top:1px solid var(--line);padding-top:.75rem;margin:1rem 0 0}
+.cost-totals dd{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.cost-source{margin-top:.75rem}
+@media(max-width:52rem){.costs{grid-template-columns:1fr}}
+@media(max-width:38rem){.costs .allow-fields{grid-template-columns:1fr}.costs input,.costs select{min-height:3rem}}
 </style>
 </head>
 <body>
@@ -44,9 +52,65 @@
 </div>
 <output id="allow-result" aria-live="polite"></output>
 </section>
+<section class="section" aria-labelledby="cost-title">
+<h2 id="cost-title">What will each application cost?</h2>
+<p class="hint">Use the pace above to compare model usage with local electricity. For usage included in a subscription, check your account allowance above. Purchased credits apply only to usage billed in credits.</p>
+<div class="costs">
+  <article class="card" aria-labelledby="model-title">
+    <h3 id="model-title">Model usage</h3>
+    <p class="meta">Enter the uncached input and billed output tokens across all turns for one application. The starting counts are examples.</p>
+    <div class="allow-fields">
+      <label class="wide">Model and billing method<select id="model-rate">
+        <optgroup label="API dollars" data-unit="USD">
+          <option value="sol" data-input="2" data-output="10">GPT-6.2 Sol · API</option>
+          <option value="astra" data-input="8" data-output="40">GPT-6.2 Astra · API</option>
+          <option value="luna" data-input="0.10" data-output="0.50">GPT-6 Luna · API</option>
+          <option value="sonnet" data-input="2" data-output="10">Claude Sonnet 5.5 · API</option>
+          <option value="neon" data-input="3" data-output="15">Gemini 4 Neon · API</option>
+          <option value="custom">Other API model · enter rates</option>
+        </optgroup>
+        <optgroup label="Codex purchased credits" data-unit="credits">
+          <option value="sol-credits" data-input="50" data-output="250">GPT-6.2 Sol · Codex credits</option>
+          <option value="astra-credits" data-input="200" data-output="1000">GPT-6.2 Astra · Codex credits</option>
+        </optgroup>
+      </select></label>
+      <label>Input tokens per job<input id="job-input" type="number" min="0" step="1" value="3000"></label>
+      <label>Output tokens per job<input id="job-output" type="number" min="0" step="1" value="600"></label>
+      <label>Input <span class="rate-unit">USD</span> per 1M tokens<input id="input-rate" type="number" min="0" step="any" placeholder="Unknown"></label>
+      <label>Output <span class="rate-unit">USD</span> per 1M tokens<input id="output-rate" type="number" min="0" step="any" placeholder="Unknown"></label>
+    </div>
+    <dl class="cost-totals" aria-live="polite">
+      <dt>One application</dt><dd id="model-job"></dd>
+      <dt>Active day</dt><dd id="model-day"></dd>
+      <dt>Planned week</dt><dd id="model-week"></dd>
+    </dl>
+    <p id="model-note" class="meta cost-source"></p>
+    <small>Standard text rates checked November 25, 2026. <a href="https://developers.openai.com/api/docs/pricing">OpenAI API</a> · <a href="https://platform.claude.com/docs/en/about-claude/pricing">Claude API</a> · <a href="https://ai.google.dev/gemini-api/docs/pricing#gemini-4-neon">Gemini API</a> · <a href="https://developers.openai.com/codex/pricing/">Codex credits</a></small>
+  </article>
+  <article class="card" aria-labelledby="power-title">
+    <h3 id="power-title">Local electricity</h3>
+    <p class="meta">Replace the example power and runtime with average watts measured at the wall and minutes of active model use for one application.</p>
+    <div class="allow-fields">
+      <label>Average active watts<input id="watts" type="number" min="0" step="any" value="60"></label>
+      <label>Electricity in USD per kWh<input id="electricity-rate" type="number" min="0" step="any" value="0.1817"></label>
+      <label>Minimum active minutes per job<input id="min-runtime" type="number" min="0" step="any" value="2"></label>
+      <label>Maximum active minutes per job<input id="max-runtime" type="number" min="0" step="any" value="6"></label>
+    </div>
+    <dl class="cost-totals" aria-live="polite">
+      <dt>One application</dt><dd id="power-job"></dd>
+      <dt>Active day</dt><dd id="power-day"></dd>
+      <dt>Planned week</dt><dd id="power-week"></dd>
+    </dl>
+    <p id="power-error" class="field-error" role="status" hidden></p>
+    <p class="meta cost-source">The starting rate is the September 2026 US residential average. Enter your utility rate for a local estimate. <a href="https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a">EIA Table 5.6.A</a></p>
+  </article>
+</div>
+</section>
 <footer><details><summary>How the estimates work</summary>
 <p>Applications × turns per application gives estimated turns. Multiply by average tokens per turn for total tokens. Review time uses your minutes per application. Weekly estimates cover the active days you selected.</p>
 <p>One turn means one prompt and one reply. Count input, reused context and output when estimating tokens. An allowance percentage compares matching units over the same period. A model’s context window measures the size of a request. Subscription prices alone do not specify a message or token allowance.</p>
+<p>Model usage per job is the sum of input tokens × input rate and output tokens × output rate, divided by one million. The estimate covers ordinary text tokens and excludes caching, tool fees and special service tiers. The cost fields use their own token counts so you can enter the split from a usage report.</p>
+<p>Electricity per job in USD = average watts × active minutes per job ÷ 60,000 × USD per kWh. Use the same minimum and maximum for a single measured runtime. Review minutes in the effort cards measure human time.</p>
 <p>The planner runs in this browser and clears its inputs when you reload. For an offline copy, open the planner HTML included in any edition of the kit.</p>
 </details></footer>
 </main>
@@ -134,6 +198,60 @@ function compare(models, day, week) {
   }
   asText('allow-result',message);
 }
+const editedRates = new Map();
+const shortContext = 'OpenAI Standard for requests with up to 272,000 input tokens each.';
+const rateNotes = {
+  sol: shortContext, astra: shortContext, luna: shortContext,
+  sonnet: 'Anthropic base text rates.',
+  neon: 'Google paid Standard text pricing. Include billed thinking tokens in output.',
+  custom: 'Leave an unknown rate blank. Enter zero only for a confirmed free rate.'
+};
+function selectRate() {
+  const option = byId('model-rate').selectedOptions[0];
+  const rates = editedRates.get(option.value) || [option.dataset.input || '', option.dataset.output || ''];
+  byId('input-rate').value = rates[0];
+  byId('output-rate').value = rates[1];
+  const unit = option.parentElement.dataset.unit;
+  document.querySelectorAll('.rate-unit').forEach(label => { label.textContent = unit; });
+  asText('model-note', rateNotes[option.value] || 'Codex Standard speed. Check your usage dashboard for included limits.');
+}
+function costInput(id) {
+  const input = byId(id);
+  const value = input.valueAsNumber;
+  if (!input.validity.valid || !Number.isFinite(value) || value > Number.MAX_SAFE_INTEGER) return null;
+  return value;
+}
+const costNumber = new Intl.NumberFormat('en-US', {maximumFractionDigits:7});
+const dollars = new Intl.NumberFormat('en-US', {style:'currency', currency:'USD', maximumFractionDigits:7});
+function formatCost(value, unit) {
+  const small = value > 0 && value < 0.0000001;
+  const amount = small ? 0.0000001 : value;
+  const formatted = unit === 'USD' ? dollars.format(amount) : costNumber.format(amount) + ' credits';
+  return small ? '< ' + formatted : formatted;
+}
+function updateCosts(day, week) {
+  const tokensIn = costInput('job-input'), tokensOut = costInput('job-output');
+  const rateIn = costInput('input-rate'), rateOut = costInput('output-rate');
+  const knownRate = [tokensIn, tokensOut, rateIn, rateOut].every(value => value !== null);
+  const unit = byId('model-rate').selectedOptions[0].parentElement.dataset.unit;
+  const watts = costInput('watts'), powerRate = costInput('electricity-rate');
+  const low = costInput('min-runtime'), high = costInput('max-runtime');
+  const knownPower = [watts, powerRate, low, high].every(value => value !== null);
+  const reversed = low !== null && high !== null && low > high;
+  asText('power-error', 'Maximum active minutes must be at least the minimum.');
+  byId('power-error').hidden = !reversed;
+  for (const [period, jobs] of [['job',1], ['day',day], ['week',week]]) {
+    const usage = knownRate ? formatCost((tokensIn * rateIn + tokensOut * rateOut) / 1000000 * jobs, unit) : 'Unknown';
+    asText('model-' + period, usage);
+    let electricity = 'Unknown';
+    if (knownPower && !reversed) {
+      const cost = minutes => formatCost(watts * minutes / 60000 * powerRate * jobs, 'USD');
+      const lower = cost(low), upper = cost(high);
+      electricity = lower === upper ? lower : lower + ' to ' + upper;
+    }
+    asText('power-' + period, electricity);
+  }
+}
 function update() {
   const day = Number(byId('pace').value), week = day * Number(byId('days').value);
   asText('count',day); asText('week-count',fmt.format(week) + (week === 1 ? ' application' : ' applications') + ' in a planned week');
@@ -147,8 +265,16 @@ function update() {
     }
   }
   compare(models, day, week);
+  updateCosts(day, week);
 }
 workflows.forEach(createCard);
+selectRate();
+byId('model-rate').addEventListener('input', selectRate);
+for (const id of ['input-rate', 'output-rate']) {
+  byId(id).addEventListener('input', () => {
+    editedRates.set(byId('model-rate').value, [byId('input-rate').value, byId('output-rate').value]);
+  });
+}
 document.addEventListener('input', update);
 document.addEventListener('change', update);
 update();

@@ -57,6 +57,8 @@ Ask the assistant to read back the choices and list any missing information toge
 
 Open the [workload planner](docs/index.html) before changing a scheduled batch size. Adjust the Advanced assumptions to include research, tailoring and review. The calculator changes only the estimate. Change a live schedule or application cap separately.
 
+For metered usage, choose the model and billing method under **Model usage**. Use total uncached input and billed output from a sample job. API estimates use dollars and Codex purchased usage uses credits. Compare included subscription usage with the limit shown in your account. [Rates and worked example](START_HERE.md#estimate-what-one-application-costs)
+
 Start a run by checking the tracker for duplicates and recent source coverage. Rank leads in a short table before spending messages on tailored résumés. Review new or changed requirements once, group outstanding factual questions, and save a short end-of-run summary. Multiple workers need one shared reservation per employer and requisition, one daily limit, and a shared record of receipts. If the host cannot coordinate those writes, run one application worker. There is no reason to increase a daily cap because a higher subscription is available.
 
 ## Check your first result

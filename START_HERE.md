@@ -80,6 +80,28 @@ Start with a draft application so you can inspect the resume and answers. Enable
 
 Before setting a daily pace, open the [workload planner](docs/index.html). Set applications per active day and days per week. Try the turns, tokens and review minutes you observed on one real application. Use the same reset window if you compare with an account allowance.
 
+### Estimate what one application costs
+
+If you pay for model usage, add up the uncached input and billed output tokens across all calls for one application. Multiply each count by its rate, add the two amounts, then divide by one million. For example, 3,000 input and 600 output tokens on GPT-6.2 Sol cost $0.012 through the API. The same workload uses 0.3 purchased Codex credits at Standard speed. Your subscription dashboard gives your included limits and reset times.
+
+These starting rates were checked on November 25, 2026. Each column gives the rate per million tokens. The OpenAI API examples use Standard pricing for individual requests with up to 272,000 input tokens.
+
+| Model and billing method | Input | Output | Official rate card |
+| --- | ---: | ---: | --- |
+| GPT-6.2 Sol API | $2 | $10 | [OpenAI](https://developers.openai.com/api/docs/models/gpt-6.2-sol) |
+| GPT-6.2 Astra API | $8 | $40 | [OpenAI](https://developers.openai.com/api/docs/models/gpt-6.2-astra) |
+| GPT-6 Luna API | $0.10 | $0.50 | [OpenAI](https://developers.openai.com/api/docs/models/gpt-6-luna) |
+| Claude Sonnet 5.5 API | $2 | $10 | [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) |
+| Gemini 4 Neon API | $3 | $15 | [Google](https://ai.google.dev/gemini-api/docs/pricing#gemini-4-neon) |
+| GPT-6.2 Sol purchased credits | 50 credits | 250 credits | [Codex](https://developers.openai.com/codex/pricing/) |
+| GPT-6.2 Astra purchased credits | 200 credits | 1,000 credits | [Codex](https://developers.openai.com/codex/pricing/) |
+
+You can edit every rate. For an unlisted model, choose **Other API model** and leave unconfirmed prices blank. Tool charges, caching and special service tiers need their own billing details.
+
+For local runs, multiply measured average watts by active model minutes per application, divide by 60,000 to get kWh, then multiply by your electricity rate in USD per kWh. At the example 60 W and 2 to 6 minutes, one job uses 0.002 to 0.006 kWh. At the September 2026 US residential average of $0.1817 per kWh, that costs $0.0003634 to $0.0010902. Replace the examples with a wall meter reading, timed model use and the rate from your bill. [EIA Table 5.6.A](https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a)
+
+### Requests you can make
+
 - “Find new jobs matching my profile.”
 - “Prepare these applications for review.”
 - “Check job emails and update my tracker.”

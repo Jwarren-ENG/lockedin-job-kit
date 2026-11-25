@@ -1,5 +1,7 @@
 # Release checks
 
+The offline planner test also checks the November 25, 2026 model presets, editable token counts and rates, purchased credit units, unknown and zero prices, and electricity at measured watts and runtime. It opens the standalone HTML in Chrome with networking disabled. Run `BROWSER_CHANNEL=chrome node tests/test-usage-planner.mjs`.
+
 ## Version 0.5.0
 
 Run `BROWSER_CHANNEL=chrome node tests/test-usage-planner.mjs` for the offline workload planner. It exercises keyboard input, daily and weekly arithmetic, edition assumptions, allowance units and reset periods, empty and invalid inputs, mobile layout and network isolation. The edition tests check that each ZIP carries the same HTML as the standalone release asset.
