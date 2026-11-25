@@ -10,7 +10,7 @@ Start by uploading your résumé. Confirm the facts the kit reads from it, then 
 
 The dollar amounts are planning budgets. You can use any edition with tools you already have. Check file, browsing and scheduling access in your own app before relying on them.
 
-**[Open the application workload planner](https://jwarren-eng.github.io/lockedin-job-kit/)** to compare daily and weekly turns, tokens and review time for all three editions. Adjust the assumptions, then compare with an allowance from your own account. The [offline HTML download](https://github.com/Jwarren-ENG/lockedin-job-kit/releases/latest/download/lockedin-usage-planner.html) opens directly in a browser.
+**[Open the application workload planner](https://htmlpreview.github.io/?https://github.com/Jwarren-ENG/lockedin-job-kit/blob/v0.5.0/docs/index.html)** to compare daily and weekly turns, tokens and review time for all three editions. Adjust the assumptions, then compare with an allowance from your own account. The [offline HTML download](https://github.com/Jwarren-ENG/lockedin-job-kit/releases/latest/download/lockedin-usage-planner.html) opens directly in a browser.
 
 **First time?** Open the [Lite starter text](CHAT_STARTER.txt), copy it into a private ChatGPT or Claude conversation and press Send. It should ask only for your résumé or work history first. After you check its summary, you can choose whether to use a specific past chat, then answer questions about roles, relocation, salary and other missing details. If you have never had a paid job, start with coursework, volunteering or a project you enjoyed.
 
