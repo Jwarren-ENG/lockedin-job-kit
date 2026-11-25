@@ -15,3 +15,9 @@ Store confirmed employment type independently from the resume display title. Int
 AI-assisted software building and workflow automation can be relevant skills without implying independent coding mastery. Distinguish tools personally used from tools the candidate wants to learn. Apply factual corrections to future drafts, invalidate cached answers, and preserve submitted versions as historical evidence.
 
 For confidential work, use only confirmed, permitted high-level descriptions. Do not publish client names, internal architecture, source documents, or restricted metrics. Reading an NDA does not establish permission to disclose; unclear details stay out of outward-facing artifacts.
+
+## Match the wording to the work
+
+When the candidate confirms an official title and a plain-language description of the work, keep both in their private experience record. Use the official title in employment verification fields. On a résumé, an accurate description of the function or product area can make an unfamiliar title clearer. Keep internship status visible and use only wording the candidate can defend.
+
+For example, someone who sourced circuit boards can name that category in an electronics application if they confirm the work. Someone who estimated a possible cost reduction should describe it as an estimate. Save the exact résumé sent with each application so the candidate can retrieve it for an interview.

@@ -1,6 +1,38 @@
 # Start your job search
 
-## Get the apps
+## Use a chat
+
+Have your latest résumé and one job description ready. If you are still writing your résumé, a few lines describing your work and education are enough to begin.
+
+### ChatGPT
+
+1. Open [ChatGPT](https://chatgpt.com/) and start a new private conversation.
+2. Select **+** next to the message box, choose **Add photos & files**, and select your résumé. You can also paste the relevant parts.
+3. Copy the [starter instructions](CHAT_STARTER.txt) into the message. Underneath, paste the job description or the employer’s link. If ChatGPT cannot open the link, paste the description. Send the message and answer any questions about your goals. [ChatGPT file help](https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt)
+
+### Claude
+
+1. Open [Claude](https://claude.ai/) and start a new private conversation.
+2. Select **+**, choose **Add files or photos**, and attach your résumé. You can drag it into the chat on a computer.
+3. Paste the [starter instructions](CHAT_STARTER.txt) and a job description. Send them together. If your résumé is on another device, paste a short work history for now. [Claude file help](https://support.claude.com/en/articles/8241126-upload-files-to-claude)
+
+### Another chat app
+
+Paste the same starter text, your work history and the job description into a private conversation. If the app cannot browse, supply the text and date from the employer’s page yourself.
+
+**What a first result looks like.** Suppose a posting asks for Excel and weekly reporting. Your résumé says you prepared a weekly inventory report in Excel. A good first draft keeps both details. If the posting also asks for SQL and your résumé is silent, the assistant should ask whether you have used it. Read the proposed wording before using it.
+
+## Keep your search between chats
+
+At the end of a session, ask for a tracker you can save. A spreadsheet or a table in a note is enough. Keep the employer, role, posting link, current stage and exact résumé filename on each row. If you apply yourself, tell the assistant when you submitted or share the relevant part of the confirmation. An interview invitation and a scheduled interview are different stages.
+
+For repeat use in ChatGPT, create a private **Project** named *My Job Search*, add the starter text and your résumé to its sources, and start your next chat there. In Claude, add those files to the **Files** section of a private project if your account offers Projects. Keep the latest tracker there as well. You can also attach your saved tracker and starter to a fresh chat. [ChatGPT projects](https://help.openai.com/en/articles/10169521-projects-in-chatgpt) · [Claude projects](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)
+
+## Set up the desktop kit
+
+Choose this route if you want a private folder of application files, a spreadsheet that the assistant can update, or an optional Obsidian dashboard.
+
+### Optional downloads
 
 You need **one compatible assistant**, not every app below. Start on a computer; phone apps are useful for viewing synced notes and supported notifications.
 
@@ -15,16 +47,16 @@ You need **one compatible assistant**, not every app below. Start on a computer;
 
 The setup form opens in your existing browser. Node.js and developer build tools are not needed to open it. Email connectors are connected inside your chosen assistant; the kit does not need your email password. Resume PDF creation uses the assistant's available LaTeX/PDF tools, which setup will check separately.
 
-## Set up the kit
+### Open the setup form
 
-1. Download the latest **job-search-kit.zip** from this repository's Releases and unzip it. Keep the folder named `job-search-kit`. You don't need to build the interface.
+1. Download the [desktop ZIP](https://github.com/Jwarren-ENG/job-search-kit/releases/latest/download/job-search-kit.zip) and unzip it. If your computer asks where to extract it, choose a new folder called `job-search-kit`. You don't need to build the interface.
 2. Open **assets/setup.html** in your browser. Fill in your details, target roles and permissions. All choices start off. Download your private setup file somewhere outside this repository.
-3. Open the kit in your assistant using an option below. Attach your resume (LaTeX preferred), and your downloaded setup file through the assistant's normal file controls.
+3. Open the kit in your assistant using an option below. Attach your existing résumé, and your downloaded setup file through the assistant's normal file controls.
 4. Paste this:
 
 > Read skills/start/SKILL.md and set up Job Search Kit for me. Use my attached setup and resume. Save my private workspace outside this code folder. Confirm my resume facts, test available tools, create my tracker, and offer an Obsidian board and calendar. Ask me about anything missing. Configure daily searches and email tracking only according to my permissions. Show me what is ready and what still needs connecting.
 
-## Choose your assistant
+### Open the kit in your desktop assistant
 
 **Codex desktop:** Open the unzipped folder as a project and paste the prompt above. This folder-based route works without registering a marketplace. The included Codex plugin manifest can also be installed through a compatible custom marketplace/share flow. Open a fresh task after installation. See [host details](references/hosts.md).
 
@@ -32,7 +64,7 @@ The setup form opens in your existing browser. Node.js and developer build tools
 
 **Claude Desktop / Cowork:** Use its custom plugin upload flow to upload the release ZIP or `.plugin` file, if your account supports it. Otherwise, grant Cowork access to the unzipped folder and use the prompt above. Select a separate private folder for your data.
 
-Normal web chat without local tools cannot operate this full workflow. Browser control, email, PDF generation and scheduling are provided by your assistant, not by this download.
+Ask your desktop assistant to show which tools it can use in this session. If an option is unavailable, you can still use the chat steps above and save the tracker yourself.
 
 ## Open your Obsidian dashboard
 

@@ -26,7 +26,17 @@ with tempfile.TemporaryDirectory() as tmp:
     archive=Path(tmp)/'job-search-kit.plugin'
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
         for rel in sorted(files):z.write(root/rel,rel)
-    for name in ('job-search-kit.plugin','job-search-kit.zip'):shutil.copyfile(archive,out/name)
-    digest=hashlib.sha256(archive.read_bytes()).hexdigest()
-    (out/'SHA256SUMS.txt').write_text(''.join(digest+'  '+n+'\n' for n in ('job-search-kit.plugin','job-search-kit.zip')))
+    outputs = {
+        'job-search-kit.plugin': archive,
+        'job-search-kit.zip': archive,
+        'CHAT_STARTER.txt': root / 'CHAT_STARTER.txt',
+    }
+    checksums = []
+    for name, source in outputs.items():
+        target = out / name
+        shutil.copyfile(source, target)
+        checksum = hashlib.sha256(target.read_bytes()).hexdigest()
+        checksums.append(f'{checksum}  {name}\n')
+    (out / 'SHA256SUMS.txt').write_text(''.join(checksums))
+    digest = hashlib.sha256(archive.read_bytes()).hexdigest()
 print(json.dumps({'files':len(files),'destination':str(out),'sha256':digest}))
