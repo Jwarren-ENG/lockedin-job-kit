@@ -5,6 +5,9 @@ description: Run a configured job search, discover new matching openings, prepar
 
 # Run a job-search cycle
 
+When the user starts this task from Project Pluto, the handoff includes their private tracker and desktop workspace. Read the supplied desktop database in SQLite read-only mode. Match its jobs, immutable submissions and events against the kit tracker before retrying a role. An unresolved difference is a reason to check the employer receipt. Write verified outcomes using the usual kit commands and refresh the connected dashboard.
+
+
 Read the private profile, permissions, capabilities, schedule and existing applications first. If no workspace is configured, use start. Recurring runs use confirmed profile facts. Never read past chats as part of a scheduled run. If paused, stop external actions. Read [permissions](../../references/permissions.md), [discovery](../../references/discovery.md), and [tracking](../../references/tracking.md).
 
 1. Use a run lock in the private workspace (atomic create; release on normal exit). If another run holds it, do not overlap. An old lock requires investigation, not automatic deletion. Record run ID, start time and per-source coverage.

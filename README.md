@@ -2,6 +2,8 @@
 
 Start by uploading your résumé. Confirm the facts the kit reads from it, then answer only what’s missing. The kit interviews you, finds places to look for those roles, and uses your own examples to tailor an application. A job link is optional.
 
+Already running the kit locally? Project Pluto 0.2.5 adds a Mac and Windows dashboard for your existing private tracker and optional Obsidian vault. In **Today → Job Kit workflow → Show workflow**, choose **Connect kit** and select the folder containing `exports/applications.json`. Your roles appear in Applications and your recorded interviews appear in Today. [Desktop setup with pictures](https://github.com/Jwarren-ENG/project-pluto/blob/main/docs/job-kit.md)
+
 | Edition | Best for | Start here |
 | --- | --- | --- |
 | **Lite** | Regular ChatGPT or Claude use on a roughly $20 monthly budget. Compare up to three leads at a time, draft one application, and save a short summary between chats. | [Beginner guide](BEGINNER.md) · [Download Lite](https://github.com/Jwarren-ENG/lockedin-job-kit/releases/latest/download/lockedin-lite.zip) |

@@ -5,6 +5,9 @@ description: Tailor a verified LaTeX resume and prepare or submit a specific job
 
 # Apply to a role
 
+When the user starts this task from Project Pluto, the handoff includes their private tracker and desktop workspace. Read the supplied desktop database in SQLite read-only mode. Match its jobs, immutable submissions and events against the kit tracker before retrying a role. An unresolved difference is a reason to check the employer receipt. Write verified outcomes using the usual kit commands and refresh the connected dashboard.
+
+
 Read [permissions](../../references/permissions.md), [resume workflow](../../references/resumes.md) and [tracking](../../references/tracking.md). The scripts validate records but do not control browser tools; you must enforce the same rules on every tool action.
 
 1. Verify the official job and its fit against confirmed profile criteria. Confirm ambiguous location, salary, cohort, hours, travel or authorization requirements instead of marking matches_search/eligibility_verified true without evidence. Check the database and relevant receipts for duplicates.
