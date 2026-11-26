@@ -5,6 +5,8 @@ description: Run a configured job search, discover new matching openings, prepar
 
 # Run a job-search cycle
 
+For tasks started from Project Pluto, read the settings table in the linked SQLite database in read-only mode. If the handoff is draft only, keep the entire run in draft mode. Immediately before each submission also read the current optionalWorkflows setting and the saved profile budget from the desktop database. Require autoApply to be true, an explicit positive daily target with capacity left, and current Job Kit submission permission. Before reading email, require both emailCheck and the kit’s mailbox permission. Missing or unreadable settings mean the optional action stays off.
+
 When the user starts this task from Project Pluto, the handoff includes their private tracker and desktop workspace. Read the supplied desktop database in SQLite read-only mode. Match its jobs, immutable submissions and events against the kit tracker before retrying a role. An unresolved difference is a reason to check the employer receipt. Write verified outcomes using the usual kit commands and refresh the connected dashboard.
 
 

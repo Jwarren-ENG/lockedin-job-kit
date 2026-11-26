@@ -5,6 +5,8 @@ description: Review job application progress, process authorized recruiter email
 
 # Status and responses
 
+For tasks started from Project Pluto, read the settings table in the linked SQLite database in read-only mode. Check optionalWorkflows.emailCheck in the linked desktop database before mailbox access. If off, work from previously recorded evidence. When on, check only verification codes, submission receipts and interview scheduling messages for tracked roles. Missing or unreadable settings mean the optional action stays off.
+
 Read [tracking](../../references/tracking.md) and current permissions. A user-reported interview or submission is valid evidence when labeled user-confirmed; do not demand an email to record it. Dates without a time do not establish a time zone or meeting time.
 
 When read_email is granted, use the explicitly selected mailbox/account through a supported connector. Search relevant employer/requisition threads with overlap since the last successful mail checkpoint. Read complete relevant bodies; distinguish new text from quoted content. If search coverage is partial, narrow by mailbox/date and record the actual coverage. Do not mark a full inbox check complete when only one employer was searched.

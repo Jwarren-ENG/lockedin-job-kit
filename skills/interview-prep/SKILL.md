@@ -5,6 +5,8 @@ description: Build a dated interview study plan and role-specific practice using
 
 # Prepare for an interview
 
+For tasks started from Project Pluto, read the settings table in the linked SQLite database in read-only mode. Before generating interview material, check that optionalWorkflows.interviewPrep is still true in the linked desktop database. Use saved records unless both the email checker and the kit’s scoped mailbox permission allow reading interview mail. Missing or unreadable settings mean the optional action stays off.
+
 Read the application record, submitted resume, recruiter instructions and confirmed interview date. Identify which stage is actually confirmed. Ask for the date or missing format when it changes the plan; do independent research meanwhile.
 
 Research official role/product materials first. When the user requests Reddit or other candidate accounts, search recent role/team-specific reports. Separate completed firsthand recaps from questions, speculation, promotional replies and other job tracks. Track post dates versus follow-up dates and deduplicate cross-posts. Do not invent a universal sequence, passing probability or guaranteed questions.

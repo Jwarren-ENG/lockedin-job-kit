@@ -5,6 +5,8 @@ description: Tailor a verified LaTeX resume and prepare or submit a specific job
 
 # Apply to a role
 
+For tasks started from Project Pluto, read the settings table in the linked SQLite database in read-only mode. Honor a draft only handoff. Immediately before reserving and submitting, check that optionalWorkflows.autoApply is still true in the linked desktop database and that the saved daily budget and kit cap both allow another submission. Before reading a verification email, also check optionalWorkflows.emailCheck and your mailbox scope. Missing or unreadable settings mean the optional action stays off.
+
 When the user starts this task from Project Pluto, the handoff includes their private tracker and desktop workspace. Read the supplied desktop database in SQLite read-only mode. Match its jobs, immutable submissions and events against the kit tracker before retrying a role. An unresolved difference is a reason to check the employer receipt. Write verified outcomes using the usual kit commands and refresh the connected dashboard.
 
 
